@@ -1,7 +1,6 @@
 .DS_Store
 
 
-
 # CocoaPods
 #
 # We recommend against adding the Pods directory to your .gitignore. However
@@ -15,3 +14,5 @@
 # For similar reasons as the Cocoapods one mentioned above.
 # Remove the line below to start tracking the Carthage directory
 /Carthage/
+
+
