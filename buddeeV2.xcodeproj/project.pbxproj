@@ -18,6 +18,12 @@
 		3569679A2345E3E9009B84BA /* SlideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 356967992345E3E9009B84BA /* SlideView.xib */; };
 		3569679C2345E402009B84BA /* SlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3569679B2345E402009B84BA /* SlideView.swift */; };
 		3569679F2346EA37009B84BA /* UIButton+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3569679E2346EA37009B84BA /* UIButton+extension.swift */; };
+		356967AB2346F5CA009B84BA /* montserrat_bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 356967A62346F5B4009B84BA /* montserrat_bold.otf */; };
+		356967AC2346F5CA009B84BA /* montserrat_light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 356967A72346F5B9009B84BA /* montserrat_light.otf */; };
+		356967AD2346F5CA009B84BA /* montserrat_medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 356967A82346F5B9009B84BA /* montserrat_medium.otf */; };
+		356967AE2346F5CA009B84BA /* montserrat_regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 356967A92346F5B9009B84BA /* montserrat_regular.otf */; };
+		356967B023470EF2009B84BA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356967AF23470EF2009B84BA /* LoginViewController.swift */; };
+		359D4F162347142300902723 /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359D4F152347142300902723 /* UIViewController+extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +52,12 @@
 		356967992345E3E9009B84BA /* SlideView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlideView.xib; sourceTree = "<group>"; };
 		3569679B2345E402009B84BA /* SlideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideView.swift; sourceTree = "<group>"; };
 		3569679E2346EA37009B84BA /* UIButton+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+extension.swift"; sourceTree = "<group>"; };
+		356967A62346F5B4009B84BA /* montserrat_bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = montserrat_bold.otf; sourceTree = "<group>"; };
+		356967A72346F5B9009B84BA /* montserrat_light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = montserrat_light.otf; sourceTree = "<group>"; };
+		356967A82346F5B9009B84BA /* montserrat_medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = montserrat_medium.otf; sourceTree = "<group>"; };
+		356967A92346F5B9009B84BA /* montserrat_regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = montserrat_regular.otf; sourceTree = "<group>"; };
+		356967AF23470EF2009B84BA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		359D4F152347142300902723 /* UIViewController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,11 +99,13 @@
 		356967732345BE80009B84BA /* buddeeV2 */ = {
 			isa = PBXGroup;
 			children = (
+				356967AA2346F5C1009B84BA /* Font */,
 				3569679D2346EA16009B84BA /* Extension */,
 				356967982345E3D1009B84BA /* View */,
 				356967742345BE80009B84BA /* AppDelegate.swift */,
 				356967762345BE80009B84BA /* SceneDelegate.swift */,
 				356967782345BE80009B84BA /* InitialViewController.swift */,
+				356967AF23470EF2009B84BA /* LoginViewController.swift */,
 				3569677A2345BE80009B84BA /* Main.storyboard */,
 				3569677D2345BE83009B84BA /* Assets.xcassets */,
 				3569677F2345BE83009B84BA /* LaunchScreen.storyboard */,
@@ -123,8 +137,20 @@
 			children = (
 				356967962345C2B4009B84BA /* UIColor+extension.swift */,
 				3569679E2346EA37009B84BA /* UIButton+extension.swift */,
+				359D4F152347142300902723 /* UIViewController+extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		356967AA2346F5C1009B84BA /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				356967A62346F5B4009B84BA /* montserrat_bold.otf */,
+				356967A72346F5B9009B84BA /* montserrat_light.otf */,
+				356967A82346F5B9009B84BA /* montserrat_medium.otf */,
+				356967A92346F5B9009B84BA /* montserrat_regular.otf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,8 +234,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				356967AD2346F5CA009B84BA /* montserrat_medium.otf in Resources */,
 				356967812345BE83009B84BA /* LaunchScreen.storyboard in Resources */,
+				356967AB2346F5CA009B84BA /* montserrat_bold.otf in Resources */,
 				3569677E2345BE83009B84BA /* Assets.xcassets in Resources */,
+				356967AC2346F5CA009B84BA /* montserrat_light.otf in Resources */,
+				356967AE2346F5CA009B84BA /* montserrat_regular.otf in Resources */,
 				3569677C2345BE80009B84BA /* Main.storyboard in Resources */,
 				3569679A2345E3E9009B84BA /* SlideView.xib in Resources */,
 			);
@@ -229,6 +259,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				359D4F162347142300902723 /* UIViewController+extension.swift in Sources */,
+				356967B023470EF2009B84BA /* LoginViewController.swift in Sources */,
 				356967792345BE80009B84BA /* InitialViewController.swift in Sources */,
 				356967752345BE80009B84BA /* AppDelegate.swift in Sources */,
 				356967772345BE80009B84BA /* SceneDelegate.swift in Sources */,

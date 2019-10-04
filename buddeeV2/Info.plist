@@ -2,6 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>montserrat_bold.otf</string>
+		<string>montserrat_light.otf</string>
+		<string>montserrat_regular.otf</string>
+		<string>montserrat_medium.otf</string>
+	</array>
+	<key>CFBundleDisplayName</key>
+	<string>BuddeeV2</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -60,5 +69,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>LSApplicationCategoryType</key>
+	<string>montserrat_medium.otf</string>
 </dict>
 </plist>

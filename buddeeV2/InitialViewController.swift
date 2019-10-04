@@ -100,6 +100,12 @@ class InitialViewController: UIViewController {
         viewModel.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.navigationBar.isHidden = true
+    }
+    
     private func setupViews() {
         slideViews = createSlides()
         scrollView.delegate = self
@@ -126,6 +132,13 @@ class InitialViewController: UIViewController {
                                          height: view.frame.height)
             scrollView.addSubview(slideViews[i])
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let backItem = UIBarButtonItem()
+        backItem.title = ""
+        navigationItem.backBarButtonItem = backItem
+        navigationController?.navigationBar.isHidden = false
     }
     
     func createSlides() -> [SlideView] {
