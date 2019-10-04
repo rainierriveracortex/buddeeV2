@@ -2,6 +2,8 @@
 
 xcuserdata/
 
+*.generated.swift
+
 ## Build generated
 build/
 DerivedData
