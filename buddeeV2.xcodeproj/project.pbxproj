@@ -101,6 +101,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		350244102347211E00F613E3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				356967782345BE80009B84BA /* InitialViewController.swift */,
+				356967AF23470EF2009B84BA /* LoginViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		356967682345BE80009B84BA = {
 			isa = PBXGroup;
 			children = (
@@ -124,16 +133,15 @@
 		356967732345BE80009B84BA /* buddeeV2 */ = {
 			isa = PBXGroup;
 			children = (
-				3502440E2347205E00F613E3 /* R.generated.swift */,
+				350244102347211E00F613E3 /* Controller */,
 				356967AA2346F5C1009B84BA /* Font */,
 				3569679D2346EA16009B84BA /* Extension */,
 				356967982345E3D1009B84BA /* View */,
 				356967742345BE80009B84BA /* AppDelegate.swift */,
 				356967762345BE80009B84BA /* SceneDelegate.swift */,
-				356967782345BE80009B84BA /* InitialViewController.swift */,
-				356967AF23470EF2009B84BA /* LoginViewController.swift */,
 				3569677A2345BE80009B84BA /* Main.storyboard */,
 				3569677D2345BE83009B84BA /* Assets.xcassets */,
+				3502440E2347205E00F613E3 /* R.generated.swift */,
 				3569677F2345BE83009B84BA /* LaunchScreen.storyboard */,
 				356967822345BE83009B84BA /* Info.plist */,
 			);
@@ -196,7 +204,7 @@
 			buildConfigurationList = 356967902345BE83009B84BA /* Build configuration list for PBXNativeTarget "buddeeV2" */;
 			buildPhases = (
 				5D2F73E7CA52AD90ED1D4D95 /* [CP] Check Pods Manifest.lock */,
-				3502440D23471F0300F613E3 /* ShellScript */,
+				3502440D23471F0300F613E3 /* R.Swift */,
 				3569676D2345BE80009B84BA /* Sources */,
 				3569676E2345BE80009B84BA /* Frameworks */,
 				3569676F2345BE80009B84BA /* Resources */,
@@ -294,7 +302,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3502440D23471F0300F613E3 /* ShellScript */ = {
+		3502440D23471F0300F613E3 /* R.Swift */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 12;
 			files = (
@@ -304,6 +312,7 @@
 			inputPaths = (
 				"$TEMP_DIR/rswift-lastrun",
 			);
+			name = R.Swift;
 			outputFileListPaths = (
 			);
 			outputPaths = (
