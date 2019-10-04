@@ -103,7 +103,11 @@ class InitialViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        navigationController?.navigationBar.isHidden = true
+       self.navigationController?.view.backgroundColor = .white
+       self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+       self.navigationController?.navigationBar.shadowImage = UIImage()
+       self.navigationController?.navigationBar.isTranslucent = true
+       
     }
     
     private func setupViews() {

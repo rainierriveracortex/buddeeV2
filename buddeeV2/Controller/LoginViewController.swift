@@ -29,7 +29,6 @@ class LoginViewController: UIViewController {
     }
     
     private func setupNavigationBar() {
-        self.navigationController?.navigationBar.isHidden = false
         self.navigationController?.view.backgroundColor = .white
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
