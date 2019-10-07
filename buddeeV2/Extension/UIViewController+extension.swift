@@ -18,4 +18,12 @@ extension UIViewController {
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
+    
+    func navigationBarUpdateThemeBackButton() {
+        let backItem = UIBarButtonItem()
+        backItem.title = ""
+        navigationItem.backBarButtonItem?.image = R.image.backarrow()
+        navigationItem.backBarButtonItem = backItem
+        navigationController?.navigationBar.isHidden = false
+    }
 }

@@ -14,6 +14,8 @@ class RegisterNameViewController: UIViewController {
     @IBOutlet weak private var lastNameTextField: UITextField!
     @IBOutlet weak private var mobileTextField: UITextField!
     
+    var viewModel = RegisterViewModel()
+    
     private struct Constant {
         static let backArrowImage = R.image.backarrow()
     }
@@ -29,6 +31,24 @@ class RegisterNameViewController: UIViewController {
         firstNameTextField.delegate = self
         lastNameTextField.delegate = self
         mobileTextField.delegate = self
+    }
+    
+    private func showNextScreen() {
+        guard let registerEmailViewController = R.storyboard.main.registerEmailViewController() else {
+            fatalError("cannot find register Email")
+        }
+        registerEmailViewController.viewModel = viewModel
+        navigationBarUpdateThemeBackButton()
+        navigationController?.pushViewController(registerEmailViewController, animated: true)
+    }
+    
+    @IBAction private func nextAction(_ sender: AnyObject) {
+        
+        viewModel.createRegisterUser(withFirstName: firstNameTextField.text!,
+                                     lastName: lastNameTextField.text!,
+                                     mobileNumber: mobileTextField.text!)
+        
+        showNextScreen()
     }
 
 }

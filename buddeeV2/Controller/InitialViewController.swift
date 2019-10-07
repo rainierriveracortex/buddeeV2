@@ -8,73 +8,6 @@
 
 import UIKit
 
-protocol InitialType {
-    var numberOfPages: Int { get }
-    var delegate: InitialViewModelDelegate? { get set }
-    var slideTitles: [String] { get }
-    var slideDescription: [String] { get }
-    func login()
-    func register()
-    func facebookLogin()
-}
-
-protocol InitialViewModelDelegate: class {
-    func initialViewModelDelegateDidLogin()
-    func initialViewModelDelegateDidRegister()
-    func initialViewModelDelegateDidFacebook()
-}
-
-
-class InitialViewModel: InitialType {
-    
-    weak var delegate: InitialViewModelDelegate?
-
-    var sample: String {
-        return ""
-    }
-    var numberOfPages: Int {
-        return 4
-    }
-    
-    var loginText: String {
-        return "Login"
-    }
-    
-    var registerText: String {
-        return "Register"
-    }
-    
-    var facebookText: String {
-        return "Use facebook login"
-    }
-    
-    var slideTitles: [String] {
-        return ["Remote control",
-                "Schedule Function",
-                "Monitor Consumption",
-                "Alerts"]
-    }
-    
-    var slideDescription: [String] {
-        return ["Using your phone  you can control your appliances from anywhere in your home.",
-                "Schedule operating hours of each device easily to have more control over costs.",
-                "With real-time consumption monitoring, you will know which appliances to control.",
-                "Set and receive alerts once your reach the threshold for each device to control your consumption."]
-    }
-    
-    func register() {
-        delegate?.initialViewModelDelegateDidRegister()
-    }
-    
-    func login() {
-        delegate?.initialViewModelDelegateDidLogin()
-    }
-    
-    func facebookLogin() {
-        delegate?.initialViewModelDelegateDidFacebook()
-    }
-}
-
 class InitialViewController: UIViewController {
 
     private var viewModel: InitialType!
@@ -83,11 +16,20 @@ class InitialViewController: UIViewController {
     @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var pageControl: UIPageControl!
     
+    var timer: Timer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupViewModel()
         setupViews()
+        
+        timer = Timer.scheduledTimer(timeInterval: 4,
+                                     target: self,
+                                     selector: #selector(timerAction),
+                                     userInfo: nil,
+                                     repeats: true)
+
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -191,38 +133,32 @@ extension InitialViewController: InitialViewModelDelegate {
 
 
 extension InitialViewController: UIScrollViewDelegate {
+    
+    @objc func timerAction() {
+        DispatchQueue.main.async {
+            UIView.animate(withDuration: 1.0) {
+                if self.pageControl.currentPage == 3 {
+                    self.scrollView.contentOffset.x = 0
+                } else {
+                    self.scrollView.contentOffset.x = self.view.frame.width * CGFloat(self.pageControl.currentPage + 1)
+                }
+            }
+        }
+    }
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.contentOffset.y > 0 || scrollView.contentOffset.y < 0 {
            scrollView.contentOffset.y = 0
         }
         let pageIndex = round(scrollView.contentOffset.x/view.frame.width)
         pageControl.currentPage = Int(pageIndex)
-        
-        let maximumHorizontalOffset: CGFloat = scrollView.contentSize.width - scrollView.frame.width
-         let currentHorizontalOffset: CGFloat = scrollView.contentOffset.x
-         
-         // vertical
-         let maximumVerticalOffset: CGFloat = scrollView.contentSize.height - scrollView.frame.height
-         let currentVerticalOffset: CGFloat = scrollView.contentOffset.y
-         
-         let percentageHorizontalOffset: CGFloat = currentHorizontalOffset / maximumHorizontalOffset
-         let percentageVerticalOffset: CGFloat = currentVerticalOffset / maximumVerticalOffset
-         
-        
-        let percentOffset: CGPoint = CGPoint(x: percentageHorizontalOffset, y: percentageVerticalOffset)
-           
-         if(percentOffset.x > 0 && percentOffset.x <= 0.333) {
-              slideViews[0].imageView.transform = CGAffineTransform(scaleX: (0.333-percentOffset.x)/0.333, y: (0.333-percentOffset.x)/0.333)
-              slideViews[1].imageView.transform = CGAffineTransform(scaleX: percentOffset.x/0.333, y: percentOffset.x/0.333)
-                      
-        } else if(percentOffset.x > 0.333 && percentOffset.x <= 0.666) {
-              slideViews[1].imageView.transform = CGAffineTransform(scaleX: (0.666-percentOffset.x)/0.333, y: (0.666-percentOffset.x)/0.333)
-              slideViews[2].imageView.transform = CGAffineTransform(scaleX: percentOffset.x/0.666, y: percentOffset.x/0.666)
-                      
-        } else if(percentOffset.x > 0.666 && percentOffset.x <= 0.999) {
-              slideViews[2].imageView.transform = CGAffineTransform(scaleX: (0.999-percentOffset.x)/0.333, y: (0.999-percentOffset.x)/0.333)
-              slideViews[3].imageView.transform = CGAffineTransform(scaleX: percentOffset.x/0.999, y: percentOffset.x/0.999)
-                      
-        }
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        timer.invalidate()
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
     }
 }

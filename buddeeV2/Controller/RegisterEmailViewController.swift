@@ -14,18 +14,74 @@ class RegisterEmailViewController: UIViewController {
     @IBOutlet weak private var passwordTextField: UITextField!
     @IBOutlet weak private var confirmPasswordTextField: UITextField!
     
+    var viewModel: RegisterViewModel! // this should come from RegisterNameViewController
+    
+    private var isFormValid: Bool {
+        return emailTextField.text?.isEmpty == false && passwordTextField.text?.isEmpty == false && confirmPasswordTextField.text?.isEmpty == false && isValidPassword
+        
+    }
+    
+    private var isValidPassword: Bool {
+        return passwordTextField.text == confirmPasswordTextField.text
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        configureViewModel()
+        configureTextField()
+    }
+    
+    private func configureViewModel() {
+        guard viewModel != nil else {
+            fatalError("must have viewModel")
+        }
+        
+        viewModel.delegate = self
+    }
+    
+    private func configureTextField() {
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        confirmPasswordTextField.delegate = self
+    }
+    
+    
+    private func registerUser() {
+        guard isFormValid else {
+            return
+        }
+        
+        viewModel.updateRegisterUser(withEmail: emailTextField.text!, password: passwordTextField.text!)
+        viewModel.registerUserToAPI()
+        
+    }
+    
+    @IBAction private func registerAction(_ sender: AnyObject) {
+        registerUser()
     }
 
 }
 
 extension RegisterEmailViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        if textField == emailTextField {
+            passwordTextField.becomeFirstResponder()
+        } else if passwordTextField == textField {
+            confirmPasswordTextField.becomeFirstResponder()
+        } else if confirmPasswordTextField == textField {
+            registerAction(self)
+        }
         return true
     }
     
 }
 
+extension RegisterEmailViewController: RegisterViewModelDelegate {
+    func registerViewModelDelegateDidRegister(viewModel: RegisterViewModel, error: NSError?) {
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
+}
