@@ -11,24 +11,26 @@ import UIKit
 class InitialViewController: UIViewController {
 
     private var viewModel: InitialType!
+    
     private var slideViews = [SlideView]()
     
     @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var pageControl: UIPageControl!
     
+    private var presentLogin: Bool = false // flag to present login
+    
     var timer: Timer!
+    
+    private struct Constant {
+        static let timerCount: TimeInterval = 4
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupViewModel()
         setupViews()
-        
-        timer = Timer.scheduledTimer(timeInterval: 4,
-                                     target: self,
-                                     selector: #selector(timerAction),
-                                     userInfo: nil,
-                                     repeats: true)
+        setupNotification()
 
     }
     
@@ -38,8 +40,22 @@ class InitialViewController: UIViewController {
     
     private func setupViewModel() {
         viewModel = InitialViewModel()
-        
         viewModel.delegate = self
+    }
+    
+    private func setupNotification() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(didRegister(notfication:)),
+                                               name: .didRegister, object: nil)
+    }
+    
+    private func setupTimer() {
+        timer = Timer.scheduledTimer(timeInterval: Constant.timerCount,
+                                            target: self,
+                                            selector: #selector(timerAction),
+                                            userInfo: nil,
+                                            repeats: true)
+               
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,7 +65,19 @@ class InitialViewController: UIViewController {
        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
        self.navigationController?.navigationBar.shadowImage = UIImage()
        self.navigationController?.navigationBar.isTranslucent = true
+        
+        if presentLogin {
+            viewModel.login()
+            presentLogin = false
+        }
        
+        setupTimer()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        timer.invalidate()
     }
     
     private func setupViews() {
@@ -73,7 +101,8 @@ class InitialViewController: UIViewController {
         scrollView.isPagingEnabled = true
         
         for i in 0 ..< slideViews.count {
-            slideViews[i].frame = CGRect(x: view.frame.width * CGFloat(i), y: 0,
+            slideViews[i].frame = CGRect(x: view.frame.width * CGFloat(i),
+                                         y: 0,
                                          width: view.frame.width,
                                          height: view.frame.height)
             scrollView.addSubview(slideViews[i])
@@ -101,6 +130,10 @@ class InitialViewController: UIViewController {
         
         return slides
     }
+    
+    @objc func didRegister(notfication: NSNotification) {
+        presentLogin = true
+    }
 
     @IBAction private func loginButtonAction() {
         viewModel.login()
@@ -117,16 +150,22 @@ class InitialViewController: UIViewController {
 }
 
 extension InitialViewController: InitialViewModelDelegate {
+    func initialViewModelDelegateDidLogin() {
+        guard let loginViewController = R.storyboard.main.loginViewController() else {
+            fatalError("Login View controller not found")
+        }
+        navigationController?.pushViewController(loginViewController, animated: true)
+    }
+    
     func initialViewModelDelegateDidFacebook() {
         // login with faceboook
     }
     
-    func initialViewModelDelegateDidLogin() {
-        // present login screen
-    }
-    
     func initialViewModelDelegateDidRegister() {
-        // present register screen
+        guard let registerNameViewController = R.storyboard.main.registerNameViewController() else {
+            fatalError("Register View controller not found")
+        }
+        navigationController?.pushViewController(registerNameViewController, animated: true)
     }
     
 }
@@ -159,6 +198,6 @@ extension InitialViewController: UIScrollViewDelegate {
     }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+       setupTimer()
     }
 }

@@ -29,9 +29,6 @@ class InitialViewModel: InitialType {
     
     weak var delegate: InitialViewModelDelegate?
 
-    var sample: String {
-        return ""
-    }
     var numberOfPages: Int {
         return 4
     }

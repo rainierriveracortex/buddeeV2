@@ -8,11 +8,19 @@
 
 import Foundation
 
+protocol RegisterViewModelType {
+    func createRegisterUser(withFirstName firstName: String, lastName: String, mobileNumber: String)
+    func registerUserToAPI()
+    func updateRegisterUser(withEmail email: String, password: String)
+    var registerUser: RegisterUser? { get }
+    var delegate: RegisterViewModelDelegate? { get set }
+}
+
 protocol RegisterViewModelDelegate: class {
     func registerViewModelDelegateDidRegister(viewModel: RegisterViewModel, error: NSError?)
 }
 
-class RegisterViewModel {
+class RegisterViewModel: RegisterViewModelType {
     
     var registerUser: RegisterUser?
     

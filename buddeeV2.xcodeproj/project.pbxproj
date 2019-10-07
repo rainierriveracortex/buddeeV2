@@ -14,6 +14,7 @@
 		3546917D234AE7F900522802 /* RegisterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3546917C234AE7F900522802 /* RegisterUser.swift */; };
 		35469180234AF11800522802 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3546917F234AF11800522802 /* RegisterViewModel.swift */; };
 		35469182234AF14200522802 /* InitialViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35469181234AF14200522802 /* InitialViewModel.swift */; };
+		35469184234B21E600522802 /* NSNotification+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35469183234B21E600522802 /* NSNotification+extension.swift */; };
 		356967752345BE80009B84BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356967742345BE80009B84BA /* AppDelegate.swift */; };
 		356967772345BE80009B84BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356967762345BE80009B84BA /* SceneDelegate.swift */; };
 		356967792345BE80009B84BA /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356967782345BE80009B84BA /* InitialViewController.swift */; };
@@ -54,6 +55,7 @@
 		3546917C234AE7F900522802 /* RegisterUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUser.swift; sourceTree = "<group>"; };
 		3546917F234AF11800522802 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		35469181234AF14200522802 /* InitialViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewModel.swift; sourceTree = "<group>"; };
+		35469183234B21E600522802 /* NSNotification+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification+extension.swift"; sourceTree = "<group>"; };
 		356967712345BE80009B84BA /* buddeeV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = buddeeV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		356967742345BE80009B84BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		356967762345BE80009B84BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				356967962345C2B4009B84BA /* UIColor+extension.swift */,
 				3569679E2346EA37009B84BA /* UIButton+extension.swift */,
 				359D4F152347142300902723 /* UIViewController+extension.swift */,
+				35469183234B21E600522802 /* NSNotification+extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -433,6 +436,7 @@
 				356967792345BE80009B84BA /* InitialViewController.swift in Sources */,
 				356967752345BE80009B84BA /* AppDelegate.swift in Sources */,
 				356967772345BE80009B84BA /* SceneDelegate.swift in Sources */,
+				35469184234B21E600522802 /* NSNotification+extension.swift in Sources */,
 				3546917A234ADF0D00522802 /* RegisterEmailViewController.swift in Sources */,
 				3546917D234AE7F900522802 /* RegisterUser.swift in Sources */,
 				35469182234AF14200522802 /* InitialViewModel.swift in Sources */,

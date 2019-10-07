@@ -14,7 +14,7 @@ class RegisterEmailViewController: UIViewController {
     @IBOutlet weak private var passwordTextField: UITextField!
     @IBOutlet weak private var confirmPasswordTextField: UITextField!
     
-    var viewModel: RegisterViewModel! // this should come from RegisterNameViewController
+    var viewModel: RegisterViewModelType! // this should come from RegisterNameViewController
     
     private var isFormValid: Bool {
         return emailTextField.text?.isEmpty == false && passwordTextField.text?.isEmpty == false && confirmPasswordTextField.text?.isEmpty == false && isValidPassword
@@ -81,6 +81,7 @@ extension RegisterEmailViewController: UITextFieldDelegate {
 
 extension RegisterEmailViewController: RegisterViewModelDelegate {
     func registerViewModelDelegateDidRegister(viewModel: RegisterViewModel, error: NSError?) {
+        NotificationCenter.default.post(name: .didRegister, object: nil)
         navigationController?.popToRootViewController(animated: true)
     }
     

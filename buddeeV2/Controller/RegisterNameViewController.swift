@@ -14,7 +14,7 @@ class RegisterNameViewController: UIViewController {
     @IBOutlet weak private var lastNameTextField: UITextField!
     @IBOutlet weak private var mobileTextField: UITextField!
     
-    var viewModel = RegisterViewModel()
+    private var viewModel: RegisterViewModelType = RegisterViewModel()
     
     private struct Constant {
         static let backArrowImage = R.image.backarrow()
@@ -60,6 +60,8 @@ extension RegisterNameViewController: UITextFieldDelegate {
             lastNameTextField.becomeFirstResponder()
         } else if lastNameTextField == textField {
             mobileTextField.becomeFirstResponder()
+        } else if mobileTextField == textField {
+            showNextScreen()
         }
         return true
     }
