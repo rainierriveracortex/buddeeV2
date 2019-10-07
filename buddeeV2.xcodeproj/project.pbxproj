@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3502440F2347205E00F613E3 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3502440E2347205E00F613E3 /* R.generated.swift */; };
+		3502441223472DAC00F613E3 /* RegisterNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3502441123472DAC00F613E3 /* RegisterNameViewController.swift */; };
+		35469178234ADBE000522802 /* InitialNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35469177234ADBE000522802 /* InitialNavigationViewController.swift */; };
+		3546917A234ADF0D00522802 /* RegisterEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35469179234ADF0D00522802 /* RegisterEmailViewController.swift */; };
 		356967752345BE80009B84BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356967742345BE80009B84BA /* AppDelegate.swift */; };
 		356967772345BE80009B84BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356967762345BE80009B84BA /* SceneDelegate.swift */; };
 		356967792345BE80009B84BA /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356967782345BE80009B84BA /* InitialViewController.swift */; };
@@ -42,6 +45,9 @@
 /* Begin PBXFileReference section */
 		30EF423A12B2CF3CC94AFE4A /* Pods-buddeeV2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buddeeV2.debug.xcconfig"; path = "Target Support Files/Pods-buddeeV2/Pods-buddeeV2.debug.xcconfig"; sourceTree = "<group>"; };
 		3502440E2347205E00F613E3 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		3502441123472DAC00F613E3 /* RegisterNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNameViewController.swift; sourceTree = "<group>"; };
+		35469177234ADBE000522802 /* InitialNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialNavigationViewController.swift; sourceTree = "<group>"; };
+		35469179234ADF0D00522802 /* RegisterEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterEmailViewController.swift; sourceTree = "<group>"; };
 		356967712345BE80009B84BA /* buddeeV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = buddeeV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		356967742345BE80009B84BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		356967762345BE80009B84BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +112,9 @@
 			children = (
 				356967782345BE80009B84BA /* InitialViewController.swift */,
 				356967AF23470EF2009B84BA /* LoginViewController.swift */,
+				3502441123472DAC00F613E3 /* RegisterNameViewController.swift */,
+				35469177234ADBE000522802 /* InitialNavigationViewController.swift */,
+				35469179234ADF0D00522802 /* RegisterEmailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -391,11 +400,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				359D4F162347142300902723 /* UIViewController+extension.swift in Sources */,
+				3502441223472DAC00F613E3 /* RegisterNameViewController.swift in Sources */,
+				35469178234ADBE000522802 /* InitialNavigationViewController.swift in Sources */,
 				356967B023470EF2009B84BA /* LoginViewController.swift in Sources */,
 				3502440F2347205E00F613E3 /* R.generated.swift in Sources */,
 				356967792345BE80009B84BA /* InitialViewController.swift in Sources */,
 				356967752345BE80009B84BA /* AppDelegate.swift in Sources */,
 				356967772345BE80009B84BA /* SceneDelegate.swift in Sources */,
+				3546917A234ADF0D00522802 /* RegisterEmailViewController.swift in Sources */,
 				356967972345C2B4009B84BA /* UIColor+extension.swift in Sources */,
 				3569679C2345E402009B84BA /* SlideView.swift in Sources */,
 				3569679F2346EA37009B84BA /* UIButton+extension.swift in Sources */,

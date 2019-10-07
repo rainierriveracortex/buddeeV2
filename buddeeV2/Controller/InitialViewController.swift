@@ -141,6 +141,7 @@ class InitialViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let backItem = UIBarButtonItem()
         backItem.title = ""
+        navigationItem.backBarButtonItem?.image = R.image.backarrow()
         navigationItem.backBarButtonItem = backItem
         navigationController?.navigationBar.isHidden = false
     }

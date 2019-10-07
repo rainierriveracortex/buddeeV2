@@ -1,20 +1,24 @@
 PODS:
+  - IQKeyboardManager (6.5.0)
   - R.swift (5.0.3):
     - R.swift.Library (~> 5.0.0)
   - R.swift.Library (5.0.1)
 
 DEPENDENCIES:
+  - IQKeyboardManager
   - R.swift
 
 SPEC REPOS:
   trunk:
+    - IQKeyboardManager
     - R.swift
     - R.swift.Library
 
 SPEC CHECKSUMS:
+  IQKeyboardManager: 700e5155d6a292383b54e8678aec769e14fc78fc
   R.swift: f5a87643b91ea569d23d6afb3eee9c743edde239
   R.swift.Library: cfe85d569d9bae6cb262922db130e7c3a7a5fad1
 
-PODFILE CHECKSUM: 239d1dd81da9cfa33a167c60041514446a8e2b4b
+PODFILE CHECKSUM: 48f86538a92d0b933c3833e5b8aef5e79b92befe
 
 COCOAPODS: 1.8.0

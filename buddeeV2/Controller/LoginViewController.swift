@@ -15,6 +15,10 @@ extension UINavigationController {
 }
 
 class LoginViewController: UIViewController {
+    
+    private struct Constant {
+        static let backArrowImage = R.image.backarrow()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +38,7 @@ class LoginViewController: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         
-        let yourBackImage = UIImage(named: "backarrow")
+        let yourBackImage = Constant.backArrowImage
         self.navigationController?.navigationBar.backIndicatorImage = yourBackImage
     }
 

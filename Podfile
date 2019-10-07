@@ -8,6 +8,7 @@ target 'buddeeV2' do
   # Pods for buddeeV2
 
 pod 'R.swift'
+pod 'IQKeyboardManager'
 
   target 'buddeeV2Tests' do
     inherit! :search_paths
