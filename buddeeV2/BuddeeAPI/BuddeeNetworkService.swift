@@ -21,4 +21,8 @@ extension BuddeeNetworkService: BuddeeAPI {
   func login(login: Login, completion: @escaping (APIResponse<LoginResponse>) -> Void) {
     LoginRequest(login: login, networkManager: networkManager).request(completion: completion)
   }
+  
+  func register(register: RegisterUser, completion: @escaping (APIResponse<RegistrationResponse>) -> Void) {
+    RegistrationRequest(registerUser: register, networkManager: networkManager).request(completion: completion)
+  }
 }

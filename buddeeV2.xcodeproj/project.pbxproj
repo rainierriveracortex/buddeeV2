@@ -36,7 +36,9 @@
 		359D4F162347142300902723 /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359D4F152347142300902723 /* UIViewController+extension.swift */; };
 		35A40BDD234C3B6F00C900B7 /* UINavigationController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A40BDC234C3B6F00C900B7 /* UINavigationController+extension.swift */; };
 		35A40BE0234C5D7700C900B7 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A40BDF234C5D7700C900B7 /* AlertHelper.swift */; };
-		35D14E0D234C3291003E07DD /* BuddeeLoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D14E0C234C3291003E07DD /* BuddeeLoginRequest.swift */; };
+		35A40BE2234C6AAA00C900B7 /* RegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A40BE1234C6AAA00C900B7 /* RegisterResponse.swift */; };
+		35A40BE4234C6FE700C900B7 /* RegistrationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A40BE3234C6FE700C900B7 /* RegistrationRequest.swift */; };
+		35D14E0D234C3291003E07DD /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D14E0C234C3291003E07DD /* LoginRequest.swift */; };
 		35D14E0F234C3321003E07DD /* BuddeeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D14E0E234C3321003E07DD /* BuddeeAPI.swift */; };
 		35D14E13234C3417003E07DD /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D14E12234C3416003E07DD /* LoginResponse.swift */; };
 		35D14E15234C345E003E07DD /* BuddeeNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D14E14234C345E003E07DD /* BuddeeNetworkService.swift */; };
@@ -89,7 +91,9 @@
 		359D4F152347142300902723 /* UIViewController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
 		35A40BDC234C3B6F00C900B7 /* UINavigationController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+extension.swift"; sourceTree = "<group>"; };
 		35A40BDF234C5D7700C900B7 /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
-		35D14E0C234C3291003E07DD /* BuddeeLoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddeeLoginRequest.swift; sourceTree = "<group>"; };
+		35A40BE1234C6AAA00C900B7 /* RegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponse.swift; sourceTree = "<group>"; };
+		35A40BE3234C6FE700C900B7 /* RegistrationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationRequest.swift; sourceTree = "<group>"; };
+		35D14E0C234C3291003E07DD /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		35D14E0E234C3321003E07DD /* BuddeeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddeeAPI.swift; sourceTree = "<group>"; };
 		35D14E12234C3416003E07DD /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		35D14E14234C345E003E07DD /* BuddeeNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddeeNetworkService.swift; sourceTree = "<group>"; };
@@ -276,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				35D14E12234C3416003E07DD /* LoginResponse.swift */,
+				35A40BE1234C6AAA00C900B7 /* RegisterResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -283,7 +288,8 @@
 		35D14E16234C3541003E07DD /* Request */ = {
 			isa = PBXGroup;
 			children = (
-				35D14E0C234C3291003E07DD /* BuddeeLoginRequest.swift */,
+				35D14E0C234C3291003E07DD /* LoginRequest.swift */,
+				35A40BE3234C6FE700C900B7 /* RegistrationRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -520,15 +526,17 @@
 				3502440F2347205E00F613E3 /* R.generated.swift in Sources */,
 				356967792345BE80009B84BA /* InitialViewController.swift in Sources */,
 				35D14E0F234C3321003E07DD /* BuddeeAPI.swift in Sources */,
+				35A40BE4234C6FE700C900B7 /* RegistrationRequest.swift in Sources */,
 				356967752345BE80009B84BA /* AppDelegate.swift in Sources */,
 				356967772345BE80009B84BA /* SceneDelegate.swift in Sources */,
+				35A40BE2234C6AAA00C900B7 /* RegisterResponse.swift in Sources */,
 				35A40BE0234C5D7700C900B7 /* AlertHelper.swift in Sources */,
 				35469184234B21E600522802 /* NSNotification+extension.swift in Sources */,
 				3546917A234ADF0D00522802 /* RegisterEmailViewController.swift in Sources */,
 				3546917D234AE7F900522802 /* RegisterUser.swift in Sources */,
 				35D14E15234C345E003E07DD /* BuddeeNetworkService.swift in Sources */,
 				35469182234AF14200522802 /* InitialViewModel.swift in Sources */,
-				35D14E0D234C3291003E07DD /* BuddeeLoginRequest.swift in Sources */,
+				35D14E0D234C3291003E07DD /* LoginRequest.swift in Sources */,
 				356967972345C2B4009B84BA /* UIColor+extension.swift in Sources */,
 				3569679C2345E402009B84BA /* SlideView.swift in Sources */,
 				3569679F2346EA37009B84BA /* UIButton+extension.swift in Sources */,

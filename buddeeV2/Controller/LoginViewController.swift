@@ -98,12 +98,6 @@ class LoginViewController: UIViewController {
     let password = passwordTextField.text ?? ""
     viewModel.login(username: userName, password: password)
   }
-  
-  private func showAlert(title: String?, message: String?) {
-    AlertManager.defaultAlert().addDefaultAction(title: "Ok", handler: nil)
-      .show(fromViewController: self, title: title, message: message, style: .alert)
-  }
-
 }
 
 extension LoginViewController: UITextFieldDelegate {

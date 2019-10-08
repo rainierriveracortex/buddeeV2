@@ -10,4 +10,5 @@ import Foundation
 
 protocol BuddeeAPI {
   func login(login: Login, completion: @escaping (APIResponse<LoginResponse>) -> Void)
+  func register(register: RegisterUser, completion: @escaping (APIResponse<RegistrationResponse>) -> Void)
 }
