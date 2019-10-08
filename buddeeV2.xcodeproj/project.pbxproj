@@ -264,6 +264,7 @@
 				356967832345BE83009B84BA /* Sources */,
 				356967842345BE83009B84BA /* Frameworks */,
 				356967852345BE83009B84BA /* Resources */,
+				1DFDB9AFD803EB61D15D2E04 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -339,6 +340,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1DFDB9AFD803EB61D15D2E04 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-buddeeV2Tests/Pods-buddeeV2Tests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-buddeeV2Tests/Pods-buddeeV2Tests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-buddeeV2Tests/Pods-buddeeV2Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		3502440D23471F0300F613E3 /* R.Swift */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 12;
@@ -353,7 +371,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				$SRCROOT/R.generated.swift,
+				"$SRCROOT/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

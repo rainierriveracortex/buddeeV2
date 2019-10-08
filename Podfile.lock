@@ -1,24 +1,40 @@
 PODS:
+  - Alamofire (5.0.0-rc.2)
   - IQKeyboardManager (6.5.0)
+  - Nimble (8.0.4)
+  - Quick (2.0.0)
   - R.swift (5.0.3):
     - R.swift.Library (~> 5.0.0)
   - R.swift.Library (5.0.1)
+  - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 5.0.0-rc.2)
   - IQKeyboardManager
+  - Nimble (~> 8.0.0)
+  - Quick (~> 2.0.0)
   - R.swift
+  - SwiftyJSON (~> 4.2.0)
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - IQKeyboardManager
+    - Nimble
+    - Quick
     - R.swift
     - R.swift.Library
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
+  Alamofire: f9450d3c7f6bea2ad62e7a541c3e9b186c7991d6
   IQKeyboardManager: 700e5155d6a292383b54e8678aec769e14fc78fc
+  Nimble: 18d5360282923225d62b09d781f63abc1a0111fc
+  Quick: ce1276c7c27ba2da3cb2fd0cde053c3648b3b22d
   R.swift: f5a87643b91ea569d23d6afb3eee9c743edde239
   R.swift.Library: cfe85d569d9bae6cb262922db130e7c3a7a5fad1
+  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 48f86538a92d0b933c3833e5b8aef5e79b92befe
+PODFILE CHECKSUM: 1226773fd315bf67378c9ef9d6153e3e3a267efe
 
 COCOAPODS: 1.8.0
