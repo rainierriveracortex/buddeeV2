@@ -1,13 +1,16 @@
+# Xcode
+#
+# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 .DS_Store
-
-xcuserdata/
-
-*.generated.swift
-
 ## Build generated
-build/
-DerivedData
-
+/build/
+DerivedData/
+environment.xcconfig
+xcodebuild*.log
+/reports/
+/logs/
+fastlane/report.xml
+*.generated.swift
 ## Various settings
 *.pbxuser
 !default.pbxuser
@@ -17,10 +20,18 @@ DerivedData
 !default.mode2v3
 *.perspectivev3
 !default.perspectivev3
-xcuserdata
-
-*xcworkspace/xcuserdata/*
-
+xcuserdata/
+# Reports
+CodeQualityReports/
+## Other
+*.moved-aside
+*.xccheckout
+*.xcscmblueprint
+## Obj-C/Swift specific
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
 # CocoaPods
 #
 # We recommend against adding the Pods directory to your .gitignore. However
@@ -34,9 +45,3 @@ xcuserdata
 # For similar reasons as the Cocoapods one mentioned above.
 # Remove the line below to start tracking the Carthage directory
 /Carthage/
-
-### Xcode ###
-build
-*.xcodeproj/*
-!*.xcodeproj/project.pbxproj
-!*.xcworkspace/contents.xcworkspacedata
