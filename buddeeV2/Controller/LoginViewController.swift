@@ -8,38 +8,129 @@
 
 import UIKit
 
-extension UINavigationController {
-    open override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .darkContent
+protocol LoginViewModelDelegate: class {
+  func loginViewModelDelegateDidSuccessLogin(viewModel: LoginViewModel)
+  func loginViewModelDelegateDidErrorLogin(viewModel: LoginViewModel, error: String)
+  func loginViewModelDelegateUpdateLoadingState(viewModel: LoginViewModel, isLoading: Bool)
+}
+
+class LoginViewModel {
+  weak var delegate: LoginViewModelDelegate?
+  
+  private var networkService: BuddeeAPI
+  init(networkService: BuddeeAPI = BuddeeNetworkService()) {
+    self.networkService = networkService
+  }
+  
+  func login(username: String, password: String) {
+    let login = Login(username: username, password: password)
+    networkService.login(login: login) { [weak self] (response) in
+      guard let self = self else { return }
+      switch response {
+      case .success(_):
+        self.delegate?.loginViewModelDelegateDidSuccessLogin(viewModel: self)
+      case let .error(error):
+        self.delegate?.loginViewModelDelegateDidErrorLogin(viewModel: self, error: error)
+      }
     }
+  }
 }
 
 class LoginViewController: UIViewController {
     
-    private struct Constant {
-        static let backArrowImage = R.image.backarrow()
-    }
+  @IBOutlet weak private var usernameTextField: UITextField!
+  @IBOutlet weak private var passwordTextField: UITextField!
+  
+  private var isFormValid: Bool {
+    return usernameTextField.text?.isEmpty == false && passwordTextField.text?.isEmpty == false
+  }
+  
+  private let viewModel = LoginViewModel()
+  
+  private struct Constant {
+    static let backArrowImage = R.image.backarrow()
+  }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+  override func viewDidLoad() {
+    super.viewDidLoad()
+      
+    hideKeyboardWhenTappedAround()
+    configureTextField()
+    configureViewModel()
+  }
+    
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
         
-        hideKeyboardWhenTappedAround()
+    setupNavigationBar()
+  }
+  
+  private func configureViewModel() {
+    viewModel.delegate = self
+  }
+  
+  private func configureTextField() {
+    usernameTextField.delegate = self
+    passwordTextField.delegate = self
+  }
+    
+  private func setupNavigationBar() {
+    self.navigationController?.view.backgroundColor = .white
+    self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+    self.navigationController?.navigationBar.shadowImage = UIImage()
+    self.navigationController?.navigationBar.isTranslucent = true
+    
+    let yourBackImage = Constant.backArrowImage
+    self.navigationController?.navigationBar.backIndicatorImage = yourBackImage
+  }
+  
+  @IBAction private func loginAction(_ sender: AnyObject) {
+    guard isFormValid else {
+      if usernameTextField.text?.isEmpty == true {
+        showAlert(title: "Please fill up Username field", message: nil)
+      } else {
+        showAlert(title: "Please fill up Password field", message: nil)
+      }
+      return
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        setupNavigationBar()
-    }
-    
-    private func setupNavigationBar() {
-        self.navigationController?.view.backgroundColor = .white
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
-        
-        let yourBackImage = Constant.backArrowImage
-        self.navigationController?.navigationBar.backIndicatorImage = yourBackImage
-    }
+    let userName = usernameTextField.text ?? ""
+    let password = passwordTextField.text ?? ""
+    viewModel.login(username: userName, password: password)
+  }
+  
+  private func showAlert(title: String?, message: String?) {
+    AlertManager.defaultAlert().addDefaultAction(title: "Ok", handler: nil)
+      .show(fromViewController: self, title: title, message: message, style: .alert)
+  }
 
+}
+
+extension LoginViewController: UITextFieldDelegate {
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    textField.resignFirstResponder()
+    
+    if textField == usernameTextField {
+      passwordTextField.becomeFirstResponder()
+    } else if textField == passwordTextField {
+      loginAction(self)
+    }
+    return true
+  }
+  
+}
+
+
+extension LoginViewController: LoginViewModelDelegate {
+  func loginViewModelDelegateDidSuccessLogin(viewModel: LoginViewModel) {
+    
+  }
+  
+  func loginViewModelDelegateDidErrorLogin(viewModel: LoginViewModel, error: String) {
+    showAlert(title: error, message: nil)
+  }
+  
+  func loginViewModelDelegateUpdateLoadingState(viewModel: LoginViewModel, isLoading: Bool) {
+    
+  }
 }

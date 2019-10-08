@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3502440F2347205E00F613E3 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3502440E2347205E00F613E3 /* R.generated.swift */; };
 		3502441223472DAC00F613E3 /* RegisterNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3502441123472DAC00F613E3 /* RegisterNameViewController.swift */; };
+		3515E3BE234C302800DCE755 /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3515E3BD234C302800DCE755 /* BaseRequest.swift */; };
+		3515E3C0234C305900DCE755 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3515E3BF234C305900DCE755 /* NetworkService.swift */; };
 		35469178234ADBE000522802 /* InitialNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35469177234ADBE000522802 /* InitialNavigationViewController.swift */; };
 		3546917A234ADF0D00522802 /* RegisterEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35469179234ADF0D00522802 /* RegisterEmailViewController.swift */; };
 		3546917D234AE7F900522802 /* RegisterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3546917C234AE7F900522802 /* RegisterUser.swift */; };
@@ -32,6 +34,12 @@
 		356967AE2346F5CA009B84BA /* montserrat_regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 356967A92346F5B9009B84BA /* montserrat_regular.otf */; };
 		356967B023470EF2009B84BA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356967AF23470EF2009B84BA /* LoginViewController.swift */; };
 		359D4F162347142300902723 /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359D4F152347142300902723 /* UIViewController+extension.swift */; };
+		35A40BDD234C3B6F00C900B7 /* UINavigationController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A40BDC234C3B6F00C900B7 /* UINavigationController+extension.swift */; };
+		35A40BE0234C5D7700C900B7 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A40BDF234C5D7700C900B7 /* AlertHelper.swift */; };
+		35D14E0D234C3291003E07DD /* BuddeeLoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D14E0C234C3291003E07DD /* BuddeeLoginRequest.swift */; };
+		35D14E0F234C3321003E07DD /* BuddeeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D14E0E234C3321003E07DD /* BuddeeAPI.swift */; };
+		35D14E13234C3417003E07DD /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D14E12234C3416003E07DD /* LoginResponse.swift */; };
+		35D14E15234C345E003E07DD /* BuddeeNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D14E14234C345E003E07DD /* BuddeeNetworkService.swift */; };
 		728377F3EFA72E5358D3A2DE /* Pods_buddeeV2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EACBD59CC91D47F8245963E /* Pods_buddeeV2Tests.framework */; };
 		D3D1A9821FF02AA9AAA04AE6 /* Pods_buddeeV2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 460E0948EE26BA786393763F /* Pods_buddeeV2.framework */; };
 /* End PBXBuildFile section */
@@ -50,6 +58,8 @@
 		30EF423A12B2CF3CC94AFE4A /* Pods-buddeeV2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buddeeV2.debug.xcconfig"; path = "Target Support Files/Pods-buddeeV2/Pods-buddeeV2.debug.xcconfig"; sourceTree = "<group>"; };
 		3502440E2347205E00F613E3 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		3502441123472DAC00F613E3 /* RegisterNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNameViewController.swift; sourceTree = "<group>"; };
+		3515E3BD234C302800DCE755 /* BaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
+		3515E3BF234C305900DCE755 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		35469177234ADBE000522802 /* InitialNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialNavigationViewController.swift; sourceTree = "<group>"; };
 		35469179234ADF0D00522802 /* RegisterEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterEmailViewController.swift; sourceTree = "<group>"; };
 		3546917C234AE7F900522802 /* RegisterUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUser.swift; sourceTree = "<group>"; };
@@ -77,6 +87,12 @@
 		356967A92346F5B9009B84BA /* montserrat_regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = montserrat_regular.otf; sourceTree = "<group>"; };
 		356967AF23470EF2009B84BA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		359D4F152347142300902723 /* UIViewController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
+		35A40BDC234C3B6F00C900B7 /* UINavigationController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+extension.swift"; sourceTree = "<group>"; };
+		35A40BDF234C5D7700C900B7 /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
+		35D14E0C234C3291003E07DD /* BuddeeLoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddeeLoginRequest.swift; sourceTree = "<group>"; };
+		35D14E0E234C3321003E07DD /* BuddeeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddeeAPI.swift; sourceTree = "<group>"; };
+		35D14E12234C3416003E07DD /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		35D14E14234C345E003E07DD /* BuddeeNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddeeNetworkService.swift; sourceTree = "<group>"; };
 		460E0948EE26BA786393763F /* Pods_buddeeV2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_buddeeV2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EACBD59CC91D47F8245963E /* Pods_buddeeV2Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_buddeeV2Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD38EA7CF9BDEBC51413E930 /* Pods-buddeeV2Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buddeeV2Tests.release.xcconfig"; path = "Target Support Files/Pods-buddeeV2Tests/Pods-buddeeV2Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -127,6 +143,15 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		3515E3BC234C2FEF00DCE755 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				3515E3BD234C302800DCE755 /* BaseRequest.swift */,
+				3515E3BF234C305900DCE755 /* NetworkService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		3546917B234AE7EA00522802 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +192,9 @@
 		356967732345BE80009B84BA /* buddeeV2 */ = {
 			isa = PBXGroup;
 			children = (
+				35A40BDE234C5D6A00C900B7 /* Utility */,
+				35D14E0B234C320F003E07DD /* BuddeeAPI */,
+				3515E3BC234C2FEF00DCE755 /* Network */,
 				3546917E234AF10600522802 /* ViewModel */,
 				3546917B234AE7EA00522802 /* Model */,
 				350244102347211E00F613E3 /* Controller */,
@@ -209,6 +237,7 @@
 				3569679E2346EA37009B84BA /* UIButton+extension.swift */,
 				359D4F152347142300902723 /* UIViewController+extension.swift */,
 				35469183234B21E600522802 /* NSNotification+extension.swift */,
+				35A40BDC234C3B6F00C900B7 /* UINavigationController+extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -222,6 +251,41 @@
 				356967A92346F5B9009B84BA /* montserrat_regular.otf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		35A40BDE234C5D6A00C900B7 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				35A40BDF234C5D7700C900B7 /* AlertHelper.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		35D14E0B234C320F003E07DD /* BuddeeAPI */ = {
+			isa = PBXGroup;
+			children = (
+				35D14E16234C3541003E07DD /* Request */,
+				35D14E11234C33FA003E07DD /* Response */,
+				35D14E0E234C3321003E07DD /* BuddeeAPI.swift */,
+				35D14E14234C345E003E07DD /* BuddeeNetworkService.swift */,
+			);
+			path = BuddeeAPI;
+			sourceTree = "<group>";
+		};
+		35D14E11234C33FA003E07DD /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				35D14E12234C3416003E07DD /* LoginResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		35D14E16234C3541003E07DD /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				35D14E0C234C3291003E07DD /* BuddeeLoginRequest.swift */,
+			);
+			path = Request;
 			sourceTree = "<group>";
 		};
 		9F657EFC5A0E815E468D4A14 /* Frameworks */ = {
@@ -371,7 +435,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -447,20 +511,28 @@
 			files = (
 				359D4F162347142300902723 /* UIViewController+extension.swift in Sources */,
 				3502441223472DAC00F613E3 /* RegisterNameViewController.swift in Sources */,
+				3515E3BE234C302800DCE755 /* BaseRequest.swift in Sources */,
 				35469180234AF11800522802 /* RegisterViewModel.swift in Sources */,
+				35A40BDD234C3B6F00C900B7 /* UINavigationController+extension.swift in Sources */,
+				3515E3C0234C305900DCE755 /* NetworkService.swift in Sources */,
 				35469178234ADBE000522802 /* InitialNavigationViewController.swift in Sources */,
 				356967B023470EF2009B84BA /* LoginViewController.swift in Sources */,
 				3502440F2347205E00F613E3 /* R.generated.swift in Sources */,
 				356967792345BE80009B84BA /* InitialViewController.swift in Sources */,
+				35D14E0F234C3321003E07DD /* BuddeeAPI.swift in Sources */,
 				356967752345BE80009B84BA /* AppDelegate.swift in Sources */,
 				356967772345BE80009B84BA /* SceneDelegate.swift in Sources */,
+				35A40BE0234C5D7700C900B7 /* AlertHelper.swift in Sources */,
 				35469184234B21E600522802 /* NSNotification+extension.swift in Sources */,
 				3546917A234ADF0D00522802 /* RegisterEmailViewController.swift in Sources */,
 				3546917D234AE7F900522802 /* RegisterUser.swift in Sources */,
+				35D14E15234C345E003E07DD /* BuddeeNetworkService.swift in Sources */,
 				35469182234AF14200522802 /* InitialViewModel.swift in Sources */,
+				35D14E0D234C3291003E07DD /* BuddeeLoginRequest.swift in Sources */,
 				356967972345C2B4009B84BA /* UIColor+extension.swift in Sources */,
 				3569679C2345E402009B84BA /* SlideView.swift in Sources */,
 				3569679F2346EA37009B84BA /* UIButton+extension.swift in Sources */,
+				35D14E13234C3417003E07DD /* LoginResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
