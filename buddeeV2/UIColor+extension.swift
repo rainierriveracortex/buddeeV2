@@ -20,5 +20,9 @@ extension UIColor {
     static var selectedPageColor: UIColor {
         return themeColor
     }
+  
+  static var buddeeLightGrayColor: UIColor {
+    return UIColor(red: 242/255, green: 242/255, blue: 242/255, alpha: 1)
+  }
 }
 

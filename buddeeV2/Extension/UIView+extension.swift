@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-extension UIButton {
+extension UIView {
     @IBInspectable var cornerRadius: CGFloat {
         set {
             clipsToBounds = true
@@ -20,4 +20,13 @@ extension UIButton {
         }
     }
 }
+
+extension UIView {
+   func roundTopCorners(radius: CGFloat = 10) {
+        clipsToBounds = true
+        layer.cornerRadius = radius
+        layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+    }
+}
+
 

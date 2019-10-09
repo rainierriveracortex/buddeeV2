@@ -27,7 +27,7 @@
 		356967972345C2B4009B84BA /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356967962345C2B4009B84BA /* UIColor+extension.swift */; };
 		3569679A2345E3E9009B84BA /* SlideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 356967992345E3E9009B84BA /* SlideView.xib */; };
 		3569679C2345E402009B84BA /* SlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3569679B2345E402009B84BA /* SlideView.swift */; };
-		3569679F2346EA37009B84BA /* UIButton+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3569679E2346EA37009B84BA /* UIButton+extension.swift */; };
+		3569679F2346EA37009B84BA /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3569679E2346EA37009B84BA /* UIView+extension.swift */; };
 		356967AB2346F5CA009B84BA /* montserrat_bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 356967A62346F5B4009B84BA /* montserrat_bold.otf */; };
 		356967AC2346F5CA009B84BA /* montserrat_light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 356967A72346F5B9009B84BA /* montserrat_light.otf */; };
 		356967AD2346F5CA009B84BA /* montserrat_medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 356967A82346F5B9009B84BA /* montserrat_medium.otf */; };
@@ -37,10 +37,9 @@
 		356B7181234D8D3F008993E1 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356B7180234D8D3F008993E1 /* DashboardViewController.swift */; };
 		356B7183234D8E01008993E1 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356B7182234D8E01008993E1 /* MainTabBarViewController.swift */; };
 		356B7187234DA784008993E1 /* DashboardNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356B7186234DA784008993E1 /* DashboardNavigationViewController.swift */; };
-		356B7189234DB639008993E1 /* MainTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 356B7188234DB638008993E1 /* MainTab.storyboard */; };
 		356B718B234DB6C4008993E1 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 356B718A234DB6C4008993E1 /* Dashboard.storyboard */; };
-		356B718F234DBDD1008993E1 /* DashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356B718D234DBDD1008993E1 /* DashboardTableViewCell.swift */; };
-		356B7190234DBDD1008993E1 /* DashboardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 356B718E234DBDD1008993E1 /* DashboardTableViewCell.xib */; };
+		356B7193234DF2BC008993E1 /* DashboardAllCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356B7191234DF2BC008993E1 /* DashboardAllCollectionViewCell.swift */; };
+		356B7194234DF2BC008993E1 /* DashboardAllCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 356B7192234DF2BC008993E1 /* DashboardAllCollectionViewCell.xib */; };
 		359D4F162347142300902723 /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359D4F152347142300902723 /* UIViewController+extension.swift */; };
 		35A40BDD234C3B6F00C900B7 /* UINavigationController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A40BDC234C3B6F00C900B7 /* UINavigationController+extension.swift */; };
 		35A40BE0234C5D7700C900B7 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A40BDF234C5D7700C900B7 /* AlertHelper.swift */; };
@@ -90,7 +89,7 @@
 		356967962345C2B4009B84BA /* UIColor+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIColor+extension.swift"; path = "../UIColor+extension.swift"; sourceTree = "<group>"; };
 		356967992345E3E9009B84BA /* SlideView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlideView.xib; sourceTree = "<group>"; };
 		3569679B2345E402009B84BA /* SlideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideView.swift; sourceTree = "<group>"; };
-		3569679E2346EA37009B84BA /* UIButton+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+extension.swift"; sourceTree = "<group>"; };
+		3569679E2346EA37009B84BA /* UIView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
 		356967A62346F5B4009B84BA /* montserrat_bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = montserrat_bold.otf; sourceTree = "<group>"; };
 		356967A72346F5B9009B84BA /* montserrat_light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = montserrat_light.otf; sourceTree = "<group>"; };
 		356967A82346F5B9009B84BA /* montserrat_medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = montserrat_medium.otf; sourceTree = "<group>"; };
@@ -100,10 +99,9 @@
 		356B7180234D8D3F008993E1 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		356B7182234D8E01008993E1 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		356B7186234DA784008993E1 /* DashboardNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardNavigationViewController.swift; sourceTree = "<group>"; };
-		356B7188234DB638008993E1 /* MainTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainTab.storyboard; sourceTree = "<group>"; };
 		356B718A234DB6C4008993E1 /* Dashboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
-		356B718D234DBDD1008993E1 /* DashboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableViewCell.swift; sourceTree = "<group>"; };
-		356B718E234DBDD1008993E1 /* DashboardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardTableViewCell.xib; sourceTree = "<group>"; };
+		356B7191234DF2BC008993E1 /* DashboardAllCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardAllCollectionViewCell.swift; sourceTree = "<group>"; };
+		356B7192234DF2BC008993E1 /* DashboardAllCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardAllCollectionViewCell.xib; sourceTree = "<group>"; };
 		359D4F152347142300902723 /* UIViewController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
 		35A40BDC234C3B6F00C900B7 /* UINavigationController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+extension.swift"; sourceTree = "<group>"; };
 		35A40BDF234C5D7700C900B7 /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
@@ -221,7 +219,6 @@
 				3569679D2346EA16009B84BA /* Extension */,
 				356967982345E3D1009B84BA /* View */,
 				356967742345BE80009B84BA /* AppDelegate.swift */,
-				356B7188234DB638008993E1 /* MainTab.storyboard */,
 				356B718A234DB6C4008993E1 /* Dashboard.storyboard */,
 				356967762345BE80009B84BA /* SceneDelegate.swift */,
 				3569677A2345BE80009B84BA /* Main.storyboard */,
@@ -256,7 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				356967962345C2B4009B84BA /* UIColor+extension.swift */,
-				3569679E2346EA37009B84BA /* UIButton+extension.swift */,
+				3569679E2346EA37009B84BA /* UIView+extension.swift */,
 				359D4F152347142300902723 /* UIViewController+extension.swift */,
 				35469183234B21E600522802 /* NSNotification+extension.swift */,
 				35A40BDC234C3B6F00C900B7 /* UINavigationController+extension.swift */,
@@ -299,8 +296,8 @@
 		356B718C234DBC01008993E1 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				356B718D234DBDD1008993E1 /* DashboardTableViewCell.swift */,
-				356B718E234DBDD1008993E1 /* DashboardTableViewCell.xib */,
+				356B7191234DF2BC008993E1 /* DashboardAllCollectionViewCell.swift */,
+				356B7192234DF2BC008993E1 /* DashboardAllCollectionViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -439,15 +436,14 @@
 			files = (
 				356967AD2346F5CA009B84BA /* montserrat_medium.otf in Resources */,
 				356B718B234DB6C4008993E1 /* Dashboard.storyboard in Resources */,
-				356B7189234DB639008993E1 /* MainTab.storyboard in Resources */,
 				356967812345BE83009B84BA /* LaunchScreen.storyboard in Resources */,
-				356B7190234DBDD1008993E1 /* DashboardTableViewCell.xib in Resources */,
 				356967AB2346F5CA009B84BA /* montserrat_bold.otf in Resources */,
 				3569677E2345BE83009B84BA /* Assets.xcassets in Resources */,
 				356967AC2346F5CA009B84BA /* montserrat_light.otf in Resources */,
 				356967AE2346F5CA009B84BA /* montserrat_regular.otf in Resources */,
 				3569677C2345BE80009B84BA /* Main.storyboard in Resources */,
 				3569679A2345E3E9009B84BA /* SlideView.xib in Resources */,
+				356B7194234DF2BC008993E1 /* DashboardAllCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,11 +587,11 @@
 				3546917D234AE7F900522802 /* RegisterUser.swift in Sources */,
 				35D14E15234C345E003E07DD /* BuddeeNetworkService.swift in Sources */,
 				35469182234AF14200522802 /* InitialViewModel.swift in Sources */,
-				356B718F234DBDD1008993E1 /* DashboardTableViewCell.swift in Sources */,
 				35D14E0D234C3291003E07DD /* LoginRequest.swift in Sources */,
 				356967972345C2B4009B84BA /* UIColor+extension.swift in Sources */,
 				3569679C2345E402009B84BA /* SlideView.swift in Sources */,
-				3569679F2346EA37009B84BA /* UIButton+extension.swift in Sources */,
+				3569679F2346EA37009B84BA /* UIView+extension.swift in Sources */,
+				356B7193234DF2BC008993E1 /* DashboardAllCollectionViewCell.swift in Sources */,
 				35D14E13234C3417003E07DD /* LoginResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

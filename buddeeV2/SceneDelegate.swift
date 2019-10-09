@@ -19,14 +19,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
       
       
-      if let vc = R.storyboard.mainTab.mainTabBarViewController() {
+      if let vc = R.storyboard.dashboard.dashboardViewController() {
         // Set that ViewController as the rootViewController
         //self.window?.rootViewController = vc
         
         self.window = UIWindow(windowScene: windowScene)
         
+        let navigationController = DashboardNavigationViewController(rootViewController: vc)
+        
         // Sets our window up in front
-        self.window?.rootViewController = vc
+        self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
       }
       

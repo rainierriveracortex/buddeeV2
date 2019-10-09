@@ -15,6 +15,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         IQKeyboardManager.shared().isEnabled = true
         IQKeyboardManager.shared().isEnableAutoToolbar = false
+      
+      UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
+      UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .normal)
+      
+      if let font = R.font.montserratBold(size: 15) {
+        UINavigationBar.appearance().titleTextAttributes = [
+          NSAttributedString.Key.font: font,
+          NSAttributedString.Key.foregroundColor : UIColor.white
+        ]
+      }
+       UINavigationBar.appearance().barTintColor = .themeColor
         return true
     }
 
