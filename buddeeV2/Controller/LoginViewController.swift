@@ -57,6 +57,15 @@ class LoginViewController: UIViewController {
     hideKeyboardWhenTappedAround()
     configureTextField()
     configureViewModel()
+    setRootViewController()
+    
+    self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+  }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    
+    self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
   }
     
   override func viewWillAppear(_ animated: Bool) {
@@ -72,6 +81,13 @@ class LoginViewController: UIViewController {
   private func configureTextField() {
     usernameTextField.delegate = self
     passwordTextField.delegate = self
+  }
+  
+  private func setRootViewController() {
+    if let rootVC = navigationController?.viewControllers.first {
+      let initialNavigation = R.storyboard.main.initialNavigationViewController()
+     navigationController?.viewControllers = [rootVC, self]
+    }
   }
     
   private func setupNavigationBar() {

@@ -50,18 +50,19 @@ class RegisterViewModel: RegisterViewModelType {
   }
     
   func registerUserToAPI() {
-    if let registerUser = registerUser {
-      networkManager.register(register: registerUser) { [weak self] (response) in
-        guard let self = self else { return }
-        switch response {
-        case let .success(result):
-          print(result)
-          self.delegate?.registerViewModelDelegateDidSuccessRegister(viewModel: self)
-        case let .error(error):
-          print(error)
-          self.delegate?.registerViewModelDelegateDidFailRegister(viewModel: self, error: error)
-        }
-      }
-    }
+    delegate?.registerViewModelDelegateDidSuccessRegister(viewModel: self)
+//    if let registerUser = registerUser {
+//      networkManager.register(register: registerUser) { [weak self] (response) in
+//        guard let self = self else { return }
+//        switch response {
+//        case let .success(result):
+//          print(result)
+//          self.delegate?.registerViewModelDelegateDidSuccessRegister(viewModel: self)
+//        case let .error(error):
+//          print(error)
+//          self.delegate?.registerViewModelDelegateDidFailRegister(viewModel: self, error: error)
+//        }
+//      }
+//    }
   }
 }

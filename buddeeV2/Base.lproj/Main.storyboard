@@ -18,7 +18,7 @@
         <!--Initial View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController interfaceStyle="dark" id="BYZ-38-t0r" customClass="InitialViewController" customModule="buddeeV2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InitialViewController" interfaceStyle="dark" id="BYZ-38-t0r" customClass="InitialViewController" customModule="buddeeV2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -271,7 +271,7 @@
         <!--Initial Navigation View Controller-->
         <scene sceneID="JIS-rV-Se0">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Wea-zf-BdI" customClass="InitialNavigationViewController" customModule="buddeeV2" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="InitialNavigationViewController" automaticallyAdjustsScrollViewInsets="NO" id="Wea-zf-BdI" customClass="InitialNavigationViewController" customModule="buddeeV2" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="P8I-Yg-8bs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

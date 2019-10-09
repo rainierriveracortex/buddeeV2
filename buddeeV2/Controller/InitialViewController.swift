@@ -30,8 +30,6 @@ class InitialViewController: UIViewController {
     
     setupViewModel()
     setupViews()
-    setupNotification()
-
   }
   
   override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -41,12 +39,6 @@ class InitialViewController: UIViewController {
   private func setupViewModel() {
     viewModel = InitialViewModel()
     viewModel.delegate = self
-  }
-  
-  private func setupNotification() {
-    NotificationCenter.default.addObserver(self,
-                                          selector: #selector(didRegister(notfication:)),
-                                          name: .didRegister, object: nil)
   }
   
   private func setupTimer() {
@@ -78,6 +70,12 @@ class InitialViewController: UIViewController {
     super.viewWillDisappear(animated)
       
     timer.invalidate()
+    
+    let backItem = UIBarButtonItem()
+    backItem.title = ""
+    navigationItem.backBarButtonItem?.image = R.image.backarrow()
+    navigationItem.backBarButtonItem = backItem
+    navigationController?.navigationBar.isHidden = false
   }
   
   private func setupViews() {
@@ -109,14 +107,6 @@ class InitialViewController: UIViewController {
     }
   }
   
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    let backItem = UIBarButtonItem()
-    backItem.title = ""
-    navigationItem.backBarButtonItem?.image = R.image.backarrow()
-    navigationItem.backBarButtonItem = backItem
-    navigationController?.navigationBar.isHidden = false
-  }
-  
   func createSlides() -> [SlideView] {
     var slides = [SlideView]()
     for (index, _) in (1...viewModel.numberOfPages).enumerated() {
@@ -129,10 +119,6 @@ class InitialViewController: UIViewController {
     }
     
     return slides
-  }
-  
-  @objc func didRegister(notfication: NSNotification) {
-    presentLogin = true
   }
 
   @IBAction private func loginButtonAction() {

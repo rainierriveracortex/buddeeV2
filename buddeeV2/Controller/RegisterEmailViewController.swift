@@ -79,8 +79,10 @@ extension RegisterEmailViewController: UITextFieldDelegate {
 
 extension RegisterEmailViewController: RegisterViewModelDelegate {
   func registerViewModelDelegateDidSuccessRegister(viewModel: RegisterViewModel) {
-    NotificationCenter.default.post(name: .didRegister, object: nil)
-    navigationController?.popToRootViewController(animated: true)
+    guard let loginController = R.storyboard.main.loginViewController() else {
+      fatalError("Could not find login")
+    }
+    navigationController?.pushViewController(loginController, animated: true)
   }
   
   func registerViewModelDelegateDidFailRegister(viewModel: RegisterViewModel, error: String) {
