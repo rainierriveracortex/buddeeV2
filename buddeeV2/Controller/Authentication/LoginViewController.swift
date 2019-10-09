@@ -8,34 +8,6 @@
 
 import UIKit
 
-protocol LoginViewModelDelegate: class {
-  func loginViewModelDelegateDidSuccessLogin(viewModel: LoginViewModel)
-  func loginViewModelDelegateDidErrorLogin(viewModel: LoginViewModel, error: String)
-  func loginViewModelDelegateUpdateLoadingState(viewModel: LoginViewModel, isLoading: Bool)
-}
-
-class LoginViewModel {
-  weak var delegate: LoginViewModelDelegate?
-  
-  private var networkService: BuddeeAPI
-  init(networkService: BuddeeAPI = BuddeeNetworkService()) {
-    self.networkService = networkService
-  }
-  
-  func login(username: String, password: String) {
-    let login = Login(username: username, password: password)
-    networkService.login(login: login) { [weak self] (response) in
-      guard let self = self else { return }
-      switch response {
-      case .success(_):
-        self.delegate?.loginViewModelDelegateDidSuccessLogin(viewModel: self)
-      case let .error(error):
-        self.delegate?.loginViewModelDelegateDidErrorLogin(viewModel: self, error: error)
-      }
-    }
-  }
-}
-
 class LoginViewController: UIViewController {
     
   @IBOutlet weak private var usernameTextField: UITextField!
@@ -51,6 +23,9 @@ class LoginViewController: UIViewController {
     static let backArrowImage = R.image.backarrow()
   }
 
+  
+  // MARK: Overrides
+  
   override func viewDidLoad() {
     super.viewDidLoad()
       
@@ -74,6 +49,8 @@ class LoginViewController: UIViewController {
     setupNavigationBar()
   }
   
+  // MARK: Private method
+  
   private func configureViewModel() {
     viewModel.delegate = self
   }
@@ -85,7 +62,6 @@ class LoginViewController: UIViewController {
   
   private func setRootViewController() {
     if let rootVC = navigationController?.viewControllers.first {
-      let initialNavigation = R.storyboard.main.initialNavigationViewController()
      navigationController?.viewControllers = [rootVC, self]
     }
   }
@@ -99,6 +75,8 @@ class LoginViewController: UIViewController {
     let yourBackImage = Constant.backArrowImage
     self.navigationController?.navigationBar.backIndicatorImage = yourBackImage
   }
+  
+  // MARK: Actions
   
   @IBAction private func loginAction(_ sender: AnyObject) {
     guard isFormValid else {
@@ -133,7 +111,7 @@ extension LoginViewController: UITextFieldDelegate {
 
 extension LoginViewController: LoginViewModelDelegate {
   func loginViewModelDelegateDidSuccessLogin(viewModel: LoginViewModel) {
-    
+    // show Dashboard
   }
   
   func loginViewModelDelegateDidErrorLogin(viewModel: LoginViewModel, error: String) {
@@ -141,6 +119,6 @@ extension LoginViewController: LoginViewModelDelegate {
   }
   
   func loginViewModelDelegateUpdateLoadingState(viewModel: LoginViewModel, isLoading: Bool) {
-    
+    // show loading state
   }
 }

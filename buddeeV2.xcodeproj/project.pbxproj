@@ -33,6 +33,14 @@
 		356967AD2346F5CA009B84BA /* montserrat_medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 356967A82346F5B9009B84BA /* montserrat_medium.otf */; };
 		356967AE2346F5CA009B84BA /* montserrat_regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 356967A92346F5B9009B84BA /* montserrat_regular.otf */; };
 		356967B023470EF2009B84BA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356967AF23470EF2009B84BA /* LoginViewController.swift */; };
+		356B717B234D8C39008993E1 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356B717A234D8C39008993E1 /* LoginViewModel.swift */; };
+		356B7181234D8D3F008993E1 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356B7180234D8D3F008993E1 /* DashboardViewController.swift */; };
+		356B7183234D8E01008993E1 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356B7182234D8E01008993E1 /* MainTabBarViewController.swift */; };
+		356B7187234DA784008993E1 /* DashboardNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356B7186234DA784008993E1 /* DashboardNavigationViewController.swift */; };
+		356B7189234DB639008993E1 /* MainTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 356B7188234DB638008993E1 /* MainTab.storyboard */; };
+		356B718B234DB6C4008993E1 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 356B718A234DB6C4008993E1 /* Dashboard.storyboard */; };
+		356B718F234DBDD1008993E1 /* DashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356B718D234DBDD1008993E1 /* DashboardTableViewCell.swift */; };
+		356B7190234DBDD1008993E1 /* DashboardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 356B718E234DBDD1008993E1 /* DashboardTableViewCell.xib */; };
 		359D4F162347142300902723 /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359D4F152347142300902723 /* UIViewController+extension.swift */; };
 		35A40BDD234C3B6F00C900B7 /* UINavigationController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A40BDC234C3B6F00C900B7 /* UINavigationController+extension.swift */; };
 		35A40BE0234C5D7700C900B7 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A40BDF234C5D7700C900B7 /* AlertHelper.swift */; };
@@ -88,6 +96,14 @@
 		356967A82346F5B9009B84BA /* montserrat_medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = montserrat_medium.otf; sourceTree = "<group>"; };
 		356967A92346F5B9009B84BA /* montserrat_regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = montserrat_regular.otf; sourceTree = "<group>"; };
 		356967AF23470EF2009B84BA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		356B717A234D8C39008993E1 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		356B7180234D8D3F008993E1 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		356B7182234D8E01008993E1 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		356B7186234DA784008993E1 /* DashboardNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardNavigationViewController.swift; sourceTree = "<group>"; };
+		356B7188234DB638008993E1 /* MainTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainTab.storyboard; sourceTree = "<group>"; };
+		356B718A234DB6C4008993E1 /* Dashboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
+		356B718D234DBDD1008993E1 /* DashboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableViewCell.swift; sourceTree = "<group>"; };
+		356B718E234DBDD1008993E1 /* DashboardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardTableViewCell.xib; sourceTree = "<group>"; };
 		359D4F152347142300902723 /* UIViewController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
 		35A40BDC234C3B6F00C900B7 /* UINavigationController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+extension.swift"; sourceTree = "<group>"; };
 		35A40BDF234C5D7700C900B7 /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
@@ -138,11 +154,9 @@
 		350244102347211E00F613E3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				356967782345BE80009B84BA /* InitialViewController.swift */,
-				356967AF23470EF2009B84BA /* LoginViewController.swift */,
-				3502441123472DAC00F613E3 /* RegisterNameViewController.swift */,
-				35469177234ADBE000522802 /* InitialNavigationViewController.swift */,
-				35469179234ADF0D00522802 /* RegisterEmailViewController.swift */,
+				356B717F234D8D1D008993E1 /* Authentication */,
+				356B717E234D8D11008993E1 /* Dashboard */,
+				356B7182234D8E01008993E1 /* MainTabBarViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -169,6 +183,7 @@
 			children = (
 				3546917F234AF11800522802 /* RegisterViewModel.swift */,
 				35469181234AF14200522802 /* InitialViewModel.swift */,
+				356B717A234D8C39008993E1 /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -206,6 +221,8 @@
 				3569679D2346EA16009B84BA /* Extension */,
 				356967982345E3D1009B84BA /* View */,
 				356967742345BE80009B84BA /* AppDelegate.swift */,
+				356B7188234DB638008993E1 /* MainTab.storyboard */,
+				356B718A234DB6C4008993E1 /* Dashboard.storyboard */,
 				356967762345BE80009B84BA /* SceneDelegate.swift */,
 				3569677A2345BE80009B84BA /* Main.storyboard */,
 				3569677D2345BE83009B84BA /* Assets.xcassets */,
@@ -228,6 +245,7 @@
 		356967982345E3D1009B84BA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				356B718C234DBC01008993E1 /* Cell */,
 				356967992345E3E9009B84BA /* SlideView.xib */,
 				3569679B2345E402009B84BA /* SlideView.swift */,
 			);
@@ -255,6 +273,36 @@
 				356967A92346F5B9009B84BA /* montserrat_regular.otf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		356B717E234D8D11008993E1 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				356B7180234D8D3F008993E1 /* DashboardViewController.swift */,
+				356B7186234DA784008993E1 /* DashboardNavigationViewController.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		356B717F234D8D1D008993E1 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				356967782345BE80009B84BA /* InitialViewController.swift */,
+				356967AF23470EF2009B84BA /* LoginViewController.swift */,
+				3502441123472DAC00F613E3 /* RegisterNameViewController.swift */,
+				35469177234ADBE000522802 /* InitialNavigationViewController.swift */,
+				35469179234ADF0D00522802 /* RegisterEmailViewController.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		356B718C234DBC01008993E1 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				356B718D234DBDD1008993E1 /* DashboardTableViewCell.swift */,
+				356B718E234DBDD1008993E1 /* DashboardTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		35A40BDE234C5D6A00C900B7 /* Utility */ = {
@@ -390,7 +438,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				356967AD2346F5CA009B84BA /* montserrat_medium.otf in Resources */,
+				356B718B234DB6C4008993E1 /* Dashboard.storyboard in Resources */,
+				356B7189234DB639008993E1 /* MainTab.storyboard in Resources */,
 				356967812345BE83009B84BA /* LaunchScreen.storyboard in Resources */,
+				356B7190234DBDD1008993E1 /* DashboardTableViewCell.xib in Resources */,
 				356967AB2346F5CA009B84BA /* montserrat_bold.otf in Resources */,
 				3569677E2345BE83009B84BA /* Assets.xcassets in Resources */,
 				356967AC2346F5CA009B84BA /* montserrat_light.otf in Resources */,
@@ -518,17 +569,21 @@
 				359D4F162347142300902723 /* UIViewController+extension.swift in Sources */,
 				3502441223472DAC00F613E3 /* RegisterNameViewController.swift in Sources */,
 				3515E3BE234C302800DCE755 /* BaseRequest.swift in Sources */,
+				356B7187234DA784008993E1 /* DashboardNavigationViewController.swift in Sources */,
 				35469180234AF11800522802 /* RegisterViewModel.swift in Sources */,
 				35A40BDD234C3B6F00C900B7 /* UINavigationController+extension.swift in Sources */,
 				3515E3C0234C305900DCE755 /* NetworkService.swift in Sources */,
+				356B7183234D8E01008993E1 /* MainTabBarViewController.swift in Sources */,
 				35469178234ADBE000522802 /* InitialNavigationViewController.swift in Sources */,
 				356967B023470EF2009B84BA /* LoginViewController.swift in Sources */,
+				356B717B234D8C39008993E1 /* LoginViewModel.swift in Sources */,
 				3502440F2347205E00F613E3 /* R.generated.swift in Sources */,
 				356967792345BE80009B84BA /* InitialViewController.swift in Sources */,
 				35D14E0F234C3321003E07DD /* BuddeeAPI.swift in Sources */,
 				35A40BE4234C6FE700C900B7 /* RegistrationRequest.swift in Sources */,
 				356967752345BE80009B84BA /* AppDelegate.swift in Sources */,
 				356967772345BE80009B84BA /* SceneDelegate.swift in Sources */,
+				356B7181234D8D3F008993E1 /* DashboardViewController.swift in Sources */,
 				35A40BE2234C6AAA00C900B7 /* RegisterResponse.swift in Sources */,
 				35A40BE0234C5D7700C900B7 /* AlertHelper.swift in Sources */,
 				35469184234B21E600522802 /* NSNotification+extension.swift in Sources */,
@@ -536,6 +591,7 @@
 				3546917D234AE7F900522802 /* RegisterUser.swift in Sources */,
 				35D14E15234C345E003E07DD /* BuddeeNetworkService.swift in Sources */,
 				35469182234AF14200522802 /* InitialViewModel.swift in Sources */,
+				356B718F234DBDD1008993E1 /* DashboardTableViewCell.swift in Sources */,
 				35D14E0D234C3291003E07DD /* LoginRequest.swift in Sources */,
 				356967972345C2B4009B84BA /* UIColor+extension.swift in Sources */,
 				3569679C2345E402009B84BA /* SlideView.swift in Sources */,
@@ -711,7 +767,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.cortex.buddee.buddeeV2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -730,7 +786,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.cortex.buddee.buddeeV2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
