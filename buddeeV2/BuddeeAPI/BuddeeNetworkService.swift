@@ -18,6 +18,18 @@ struct BuddeeNetworkService {
 }
 
 extension BuddeeNetworkService: BuddeeAPI {
+  func turnPlug(plugState: PlugState, user: User, device: Device, completion: @escaping (APIResponse<PlugResponse>) -> Void) {
+     PlugRequest(user: user, device: device, plugState: plugState, networkManager: networkManager).request(completion: completion)
+  }
+  
+  func getAllDevices(user: User, compeletion: @escaping (APIResponse<AllDevices>) -> Void) {
+    GetAllDevicesRequest(user: user, networkManager: networkManager).request(completion: compeletion)
+  }
+  
+  func getProfile(user: User, completion: @escaping (APIResponse<UserProfile>) -> Void) {
+    GetProfileRequest(user: user, networkManager: networkManager).request(completion: completion)
+  }
+  
   func login(login: Login, completion: @escaping (APIResponse<LoginResponse>) -> Void) {
     LoginRequest(login: login, networkManager: networkManager).request(completion: completion)
   }
@@ -25,4 +37,5 @@ extension BuddeeNetworkService: BuddeeAPI {
   func register(register: RegisterUser, completion: @escaping (APIResponse<RegistrationResponse>) -> Void) {
     RegistrationRequest(registerUser: register, networkManager: networkManager).request(completion: completion)
   }
+  
 }

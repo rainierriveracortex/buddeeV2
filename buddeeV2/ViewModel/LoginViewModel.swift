@@ -17,6 +17,7 @@ protocol LoginViewModelDelegate: class {
 class LoginViewModel {
   weak var delegate: LoginViewModelDelegate?
   
+  private var user: User!
   private var networkService: BuddeeAPI
   init(networkService: BuddeeAPI = BuddeeNetworkService()) {
     self.networkService = networkService
@@ -27,11 +28,26 @@ class LoginViewModel {
     networkService.login(login: login) { [weak self] (response) in
       guard let self = self else { return }
       switch response {
-      case .success(_):
+      case .success(let loginResponse):
+        self.saveUser(userId: loginResponse.userID, phoneId: login.phoneId)
         self.delegate?.loginViewModelDelegateDidSuccessLogin(viewModel: self)
       case let .error(error):
         self.delegate?.loginViewModelDelegateDidErrorLogin(viewModel: self, error: error)
       }
     }
+  }
+  
+  private func saveUser(userId: String, phoneId: String) {
+    user = User(userId: userId, phoneId: phoneId)
+    AppHelper.shared.saveUser(user: user)
+  }
+  
+  func presentDashboard() {
+    guard let revealController = R.storyboard.dashboard.swRevealViewController() else {
+      fatalError("Could not find reveal controller")
+    }
+    UIApplication.shared.windows.first?.swapRootViewController(revealController,
+                                                               animationType: .present,
+                                                               completion: nil)
   }
 }

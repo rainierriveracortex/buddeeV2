@@ -111,7 +111,7 @@ extension LoginViewController: UITextFieldDelegate {
 
 extension LoginViewController: LoginViewModelDelegate {
   func loginViewModelDelegateDidSuccessLogin(viewModel: LoginViewModel) {
-    // show Dashboard
+    viewModel.presentDashboard()
   }
   
   func loginViewModelDelegateDidErrorLogin(viewModel: LoginViewModel, error: String) {
