@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class DashboardMenuViewModel {
   var numberOfSections: Int {
@@ -25,16 +26,13 @@ class DashboardMenuViewModel {
     return [R.image.menuBuddeePortal(), R.image.menuIconServices(), R.image.menuHelpCenter(), R.image.menuAbout(), R.image.menuSignout()]
   }
   
-  func signOut() {
+  func signOut(view: UIView) {
     AppHelper.shared.deleteCurrentUser()
     guard let vc = R.storyboard.main.initialViewController() else {
       fatalError("No initial controller")
     }
     let navigationController = InitialNavigationViewController(rootViewController: vc)
-    
-    UIApplication.shared.windows.first?.swapRootViewController(navigationController,
-                                                               animationType: .dismiss,
-                                                               completion: nil)
+    view.window?.setRootViewController(navigationController, options: UIWindow.TransitionOptions(direction: .toBottom))
   }
   
 }

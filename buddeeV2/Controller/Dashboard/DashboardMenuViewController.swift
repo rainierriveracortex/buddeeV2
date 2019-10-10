@@ -58,7 +58,7 @@ extension DashboardMenuViewController: UITableViewDelegate, UITableViewDataSourc
     tableView.deselectRow(at: indexPath, animated: true)
     
     if viewModel.titlePerRow[indexPath.row].lowercased() == "sign out".lowercased() {
-      viewModel.signOut()
+      viewModel.signOut(view: view)
     }
   }
   

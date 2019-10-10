@@ -44,12 +44,10 @@ class LoginViewModel {
     AppHelper.shared.saveUser(user: user)
   }
   
-  func presentDashboard() {
+  func presentDashboard(view: UIView) {
     guard let revealController = R.storyboard.dashboard.swRevealViewController() else {
       fatalError("Could not find reveal controller")
     }
-    UIApplication.shared.windows.first?.swapRootViewController(revealController,
-                                                               animationType: .present,
-                                                               completion: nil)
+    view.window?.setRootViewController(revealController, options: UIWindow.TransitionOptions(direction: .toTop))
   }
 }
