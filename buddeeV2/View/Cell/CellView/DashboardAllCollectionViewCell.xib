@@ -47,7 +47,7 @@
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="15b-48-Rh8">
                                 <rect key="frame" x="0.0" y="199" width="261" height="1"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.88544417550281673" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="7h3-AG-roK"/>
                                 </constraints>
@@ -55,17 +55,35 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ckT-GX-rGs">
                                 <rect key="frame" x="16" y="205" width="51" height="31"/>
                             </switch>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buddee-wifi-0" translatesAutoresizingMaskIntoConstraints="NO" id="xNi-Tl-bAx">
+                                <rect key="frame" x="225" y="208" width="20" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="8MG-fU-7IU"/>
+                                    <constraint firstAttribute="width" constant="20" id="jMx-DB-jSE"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buddee-bt-off" translatesAutoresizingMaskIntoConstraints="NO" id="WGL-rc-2dF">
+                                <rect key="frame" x="197" y="208" width="20" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="7d7-J0-Lvr"/>
+                                    <constraint firstAttribute="height" constant="24" id="JeI-uK-y0c"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Esp-ku-TgU" firstAttribute="centerX" secondItem="ZDP-1Q-M14" secondAttribute="centerX" id="0K3-2a-I6d"/>
                             <constraint firstItem="ckT-GX-rGs" firstAttribute="top" secondItem="15b-48-Rh8" secondAttribute="bottom" constant="5" id="4Lh-Vc-nlU"/>
+                            <constraint firstAttribute="trailing" secondItem="xNi-Tl-bAx" secondAttribute="trailing" constant="16" id="6Bc-oq-9Gh"/>
+                            <constraint firstItem="xNi-Tl-bAx" firstAttribute="leading" secondItem="WGL-rc-2dF" secondAttribute="trailing" constant="8" id="8Gh-5h-IgR"/>
                             <constraint firstItem="6Gr-6s-hMZ" firstAttribute="leading" secondItem="1ru-9t-Sw5" secondAttribute="leading" constant="24" id="8vg-14-Nfu"/>
                             <constraint firstItem="ZDP-1Q-M14" firstAttribute="centerX" secondItem="6Gr-6s-hMZ" secondAttribute="centerX" id="AN8-NI-l3m"/>
                             <constraint firstAttribute="bottom" secondItem="ckT-GX-rGs" secondAttribute="bottom" constant="5" id="Cew-7v-UhI"/>
                             <constraint firstItem="15b-48-Rh8" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Esp-ku-TgU" secondAttribute="bottom" constant="5" id="D6m-7j-iec"/>
+                            <constraint firstItem="WGL-rc-2dF" firstAttribute="centerY" secondItem="xNi-Tl-bAx" secondAttribute="centerY" id="Dbg-mx-KKz"/>
                             <constraint firstAttribute="trailing" secondItem="6Gr-6s-hMZ" secondAttribute="trailing" constant="24" id="R1G-U5-Db0"/>
                             <constraint firstItem="ZDP-1Q-M14" firstAttribute="top" secondItem="6Gr-6s-hMZ" secondAttribute="bottom" constant="10" id="SKI-tY-2qZ"/>
+                            <constraint firstItem="xNi-Tl-bAx" firstAttribute="bottom" secondItem="ckT-GX-rGs" secondAttribute="bottom" constant="-4" id="bTM-9S-oBH"/>
                             <constraint firstItem="6Gr-6s-hMZ" firstAttribute="top" secondItem="1ru-9t-Sw5" secondAttribute="top" constant="15" id="d3O-Ev-k7n"/>
                             <constraint firstItem="15b-48-Rh8" firstAttribute="leading" secondItem="1ru-9t-Sw5" secondAttribute="leading" id="dDx-Yw-hkV"/>
                             <constraint firstItem="Esp-ku-TgU" firstAttribute="top" secondItem="ZDP-1Q-M14" secondAttribute="bottom" constant="2.5" id="rR1-GI-HfV"/>
@@ -92,11 +110,14 @@
                 <outlet property="airconSwitch" destination="ckT-GX-rGs" id="kVP-0k-WPX"/>
                 <outlet property="powerStateLabel" destination="Esp-ku-TgU" id="Y07-Za-z6M"/>
                 <outlet property="roomNameLabel" destination="ZDP-1Q-M14" id="j2A-za-q7s"/>
+                <outlet property="wifiImageView" destination="xNi-Tl-bAx" id="wu0-qx-C8h"/>
             </connections>
             <point key="canvasLocation" x="283.33333333333337" y="165.73660714285714"/>
         </collectionViewCell>
     </objects>
     <resources>
         <image name="ac" width="106" height="61"/>
+        <image name="buddee-bt-off" width="20" height="15"/>
+        <image name="buddee-wifi-0" width="20" height="15"/>
     </resources>
 </document>

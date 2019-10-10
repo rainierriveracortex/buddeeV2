@@ -27,6 +27,9 @@
 		3523E85D234F6224008E569B /* DashboardMenuCellTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3523E85C234F6224008E569B /* DashboardMenuCellTableViewModel.swift */; };
 		3523E85F234F6254008E569B /* DashboardMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3523E85E234F6254008E569B /* DashboardMenuViewModel.swift */; };
 		3523E861234F62A6008E569B /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3523E860234F62A6008E569B /* DashboardViewModel.swift */; };
+		3523E864234F64D5008E569B /* BuddeeLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3523E862234F64D5008E569B /* BuddeeLoadingView.swift */; };
+		3523E865234F64D5008E569B /* BuddeeLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3523E863234F64D5008E569B /* BuddeeLoadingView.xib */; };
+		3523E869234F6660008E569B /* BuddeeLoadingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3523E868234F6660008E569B /* BuddeeLoadingController.swift */; };
 		35469178234ADBE000522802 /* InitialNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35469177234ADBE000522802 /* InitialNavigationViewController.swift */; };
 		3546917A234ADF0D00522802 /* RegisterEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35469179234ADF0D00522802 /* RegisterEmailViewController.swift */; };
 		3546917D234AE7F900522802 /* RegisterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3546917C234AE7F900522802 /* RegisterUser.swift */; };
@@ -103,6 +106,9 @@
 		3523E85C234F6224008E569B /* DashboardMenuCellTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardMenuCellTableViewModel.swift; sourceTree = "<group>"; };
 		3523E85E234F6254008E569B /* DashboardMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardMenuViewModel.swift; sourceTree = "<group>"; };
 		3523E860234F62A6008E569B /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		3523E862234F64D5008E569B /* BuddeeLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuddeeLoadingView.swift; sourceTree = "<group>"; };
+		3523E863234F64D5008E569B /* BuddeeLoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BuddeeLoadingView.xib; sourceTree = "<group>"; };
+		3523E868234F6660008E569B /* BuddeeLoadingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BuddeeLoadingController.swift; path = ../../../../../../Downloads/BuddeeLoadingController.swift; sourceTree = "<group>"; };
 		35469177234ADBE000522802 /* InitialNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialNavigationViewController.swift; sourceTree = "<group>"; };
 		35469179234ADF0D00522802 /* RegisterEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterEmailViewController.swift; sourceTree = "<group>"; };
 		3546917C234AE7F900522802 /* RegisterUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUser.swift; sourceTree = "<group>"; };
@@ -306,6 +312,9 @@
 		356967982345E3D1009B84BA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3523E868234F6660008E569B /* BuddeeLoadingController.swift */,
+				3523E862234F64D5008E569B /* BuddeeLoadingView.swift */,
+				3523E863234F64D5008E569B /* BuddeeLoadingView.xib */,
 				356B718C234DBC01008993E1 /* Cell */,
 				356967992345E3E9009B84BA /* SlideView.xib */,
 				3569679B2345E402009B84BA /* SlideView.swift */,
@@ -521,6 +530,7 @@
 				3569677C2345BE80009B84BA /* Main.storyboard in Resources */,
 				3569679A2345E3E9009B84BA /* SlideView.xib in Resources */,
 				356B7194234DF2BC008993E1 /* DashboardAllCollectionViewCell.xib in Resources */,
+				3523E865234F64D5008E569B /* BuddeeLoadingView.xib in Resources */,
 				3523E854234F5706008E569B /* DashboardMenuCellTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -649,6 +659,7 @@
 				3523E842234ECFF2008E569B /* UserProfile.swift in Sources */,
 				35A40BDD234C3B6F00C900B7 /* UINavigationController+extension.swift in Sources */,
 				3515E3C0234C305900DCE755 /* NetworkService.swift in Sources */,
+				3523E869234F6660008E569B /* BuddeeLoadingController.swift in Sources */,
 				3523E85D234F6224008E569B /* DashboardMenuCellTableViewModel.swift in Sources */,
 				3523E850234F53D8008E569B /* DashboardMenuViewController.swift in Sources */,
 				3523E84A234EE158008E569B /* GetAllDevicesRequest.swift in Sources */,
@@ -676,6 +687,7 @@
 				35D14E15234C345E003E07DD /* BuddeeNetworkService.swift in Sources */,
 				35469182234AF14200522802 /* InitialViewModel.swift in Sources */,
 				3523E846234ED61E008E569B /* GetAllDevicesResponse.swift in Sources */,
+				3523E864234F64D5008E569B /* BuddeeLoadingView.swift in Sources */,
 				3523E844234ED2B8008E569B /* UIWindow+Transition.swift in Sources */,
 				35D14E0D234C3291003E07DD /* LoginRequest.swift in Sources */,
 				356967972345C2B4009B84BA /* UIColor+extension.swift in Sources */,

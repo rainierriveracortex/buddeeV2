@@ -17,6 +17,8 @@ class DashboardAllCollectionViewCell: UICollectionViewCell {
   @IBOutlet weak private var airconSwitch: UISwitch!
   @IBOutlet weak private var roomNameLabel: UILabel!
   @IBOutlet weak private var powerStateLabel: UILabel!
+  @IBOutlet weak private var wifiImageView: UIImageView!
+  @IBOutlet weak private var bluetoothImageView: UIImageView!
   
   var viewModel: DashboardAllCollectionViewCellViewModel!
   
@@ -46,8 +48,18 @@ class DashboardAllCollectionViewCell: UICollectionViewCell {
   
   func bindViewModel() {
     roomNameLabel.text = viewModel.locatioName
-    powerStateLabel.text = viewModel.powerStateString
     airconSwitch.isOn = viewModel.isOn
+    wifiImageView.image = viewModel.wifiImage
+    updatePowerStateLabel()
+  }
+  
+  func updatePowerStateLabel() {
+    powerStateLabel.text = viewModel.powerStateString
+    if viewModel.isOn {
+      powerStateLabel.textColor = .systemGreen
+    } else {
+      powerStateLabel.textColor = .systemRed
+    }
   }
 
   @objc func switchChanged(mySwitch: UISwitch) {

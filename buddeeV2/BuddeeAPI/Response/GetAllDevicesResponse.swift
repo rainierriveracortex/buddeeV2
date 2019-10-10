@@ -28,7 +28,8 @@ class Device: Codable {
     let applianceType, misc, locationName, province: String
     let city, street, roomName, dateRegistered: String
     let timeRegistered, dateUpdated, timeUpdated, macAddress: String
-    let name, blMACAddress, wifiState, powerState: String
+    let name, blMACAddress, wifiState: String
+    var powerState: String
     let dateNow, timeNow, otaStatus, otaTimeout: String
     let dateOfPurchase, applianceBrand, applianceModel, firmware: String
 

@@ -25,8 +25,10 @@ class LoginViewModel {
   
   func login(username: String, password: String) {
     let login = Login(username: username, password: password)
+    delegate?.loginViewModelDelegateUpdateLoadingState(viewModel: self, isLoading: true)
     networkService.login(login: login) { [weak self] (response) in
       guard let self = self else { return }
+      self.delegate?.loginViewModelDelegateUpdateLoadingState(viewModel: self, isLoading: false)
       switch response {
       case .success(let loginResponse):
         self.saveUser(userId: loginResponse.userID, phoneId: login.phoneId)

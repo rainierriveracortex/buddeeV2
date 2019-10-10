@@ -27,6 +27,7 @@ class DashboardMenuViewController: UIViewController {
     tableView.isScrollEnabled = false
     tableView.tableFooterView = UIView(frame: .zero)
     tableView.estimatedRowHeight = 59
+    tableView.backgroundColor = .white
   }
 
 }
@@ -48,6 +49,7 @@ extension DashboardMenuViewController: UITableViewDelegate, UITableViewDataSourc
     let cellViewModel = DashboardMenuCellTableViewModel(title: viewModel.titlePerRow[index],
                                                         image: viewModel.imagesPerRow[index])
     cell.viewModel = cellViewModel
+    cell.backgroundColor = .white
     cell.bindViewModel()
     return cell
   }

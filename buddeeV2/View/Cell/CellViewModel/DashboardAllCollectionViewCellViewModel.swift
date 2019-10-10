@@ -27,4 +27,13 @@ class DashboardAllCollectionViewCellViewModel {
     return powerStateString.uppercased() == "on".uppercased()
   }
 
+  var wifiImage: UIImage? {
+    let plugState = PlugState.plugState(string: device.wifiState)
+    switch plugState {
+    case .on:
+      return R.image.buddeeWifi3()
+    default:
+      return R.image.buddeeWifi0()
+    }
+  }
 }

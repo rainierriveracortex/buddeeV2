@@ -21,6 +21,10 @@ class DashboardViewController: UIViewController {
   
   private let sectionInsets = UIEdgeInsets(top: 10.0, left: 20.0, bottom: 10.0, right: 20.0)
   
+  private lazy var loadingController: BuddeeLoadingController = {
+    return BuddeeLoadingController(withHostView: self.view, delegate: nil)
+  }()
+  
   override var preferredStatusBarStyle: UIStatusBarStyle {
     return .lightContent
   }
@@ -134,6 +138,10 @@ extension DashboardViewController: DashboardAllCollectionViewCellDelegate {
 }
 
 extension DashboardViewController: DashboardViewModelDelegate {
+  func dashboardViewModelDelegateShouldShowLoading(_ viewModel: DashboardViewModel, shouldShow: Bool) {
+    shouldShow ? loadingController.showLoadingScreen(animated: true) : loadingController.hideLoadingScreen(animated: true)
+  }
+  
   func dashboardViewModelDelegateReloadCollectionView(_ viewModel: DashboardViewModel) {
     collectionView.reloadData()
     setupDevicesConnectedText()

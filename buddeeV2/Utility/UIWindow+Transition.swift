@@ -73,9 +73,9 @@ extension UIWindow {
                         animations: {
                           let oldState = UIView.areAnimationsEnabled
                           UIView.setAnimationsEnabled(false)
-                          self.setRootViewController(viewController)
                           UIView.setAnimationsEnabled(oldState)
       }, completion: { _ in
+        self.setRootViewController(viewController)
         completion?()
       })
     } else {
@@ -88,8 +88,8 @@ extension UIWindow {
                       }
                       viewController.view.frame = CGRect(x: 0, y: 0, width: width, height: height)
       }, completion: { _ in
-        self.setRootViewController(viewController)
         completion?()
+        self.setRootViewController(viewController)
       })
     }
   }

@@ -27,12 +27,13 @@ class DashboardMenuViewModel {
   
   func signOut() {
     AppHelper.shared.deleteCurrentUser()
-    guard let initialVC = R.storyboard.main.initialViewController() else {
-      fatalError("Could not find initial controller")
+    guard let vc = R.storyboard.main.initialViewController() else {
+      fatalError("No initial controller")
     }
-    let navigationController = InitialNavigationViewController(rootViewController: initialVC)
+    let navigationController = InitialNavigationViewController(rootViewController: vc)
+    
     UIApplication.shared.windows.first?.swapRootViewController(navigationController,
-                                                               animationType: .fade,
+                                                               animationType: .dismiss,
                                                                completion: nil)
   }
   

@@ -17,8 +17,6 @@ class InitialViewController: UIViewController {
   @IBOutlet private weak var scrollView: UIScrollView!
   @IBOutlet private weak var pageControl: UIPageControl!
   
-  private var presentLogin: Bool = false // flag to present login
-  
   var timer: Timer!
   
   private struct Constant {
@@ -53,17 +51,12 @@ class InitialViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
       
-     self.navigationController?.view.backgroundColor = .white
-     self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-     self.navigationController?.navigationBar.shadowImage = UIImage()
-     self.navigationController?.navigationBar.isTranslucent = true
-      
-      if presentLogin {
-        viewModel.login()
-        presentLogin = false
-      }
+    self.navigationController?.view.backgroundColor = .white
+    self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+    self.navigationController?.navigationBar.shadowImage = UIImage()
+    self.navigationController?.navigationBar.isTranslucent = true
      
-      setupTimer()
+    setupTimer()
   }
   
   override func viewWillDisappear(_ animated: Bool) {

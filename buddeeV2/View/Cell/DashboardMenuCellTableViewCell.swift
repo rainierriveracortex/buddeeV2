@@ -19,5 +19,5 @@ class DashboardMenuCellTableViewCell: UITableViewCell {
     menuTitleLabel.text = viewModel.title
     logoImageView.image = viewModel.image
   }
-    
+
 }

@@ -10,6 +10,7 @@ import Foundation
 
 protocol DashboardViewModelDelegate: class {
   func dashboardViewModelDelegateReloadCollectionView(_ viewModel: DashboardViewModel)
+  func dashboardViewModelDelegateShouldShowLoading(_ viewModel: DashboardViewModel, shouldShow: Bool)
 }
 
 class DashboardViewModel {
@@ -42,7 +43,7 @@ class DashboardViewModel {
   }
   
   var devicesConnectedText: String {
-    let connectedDevices = devices.filter { PlugState.plugState(string: $0.powerState) == .on }
+    let connectedDevices = devices.filter { PlugState.plugState(string: $0.wifiState) == .on }
     return "\(connectedDevices.count) Devices Connected"
   }
   
@@ -71,8 +72,10 @@ class DashboardViewModel {
   }
   
   func getDevices() {
+    delegate?.dashboardViewModelDelegateShouldShowLoading(self, shouldShow: true)
     networkManager.getAllDevices(user: user) { [weak self] response in
       guard let self = self else { return }
+      self.delegate?.dashboardViewModelDelegateShouldShowLoading(self, shouldShow: false)
       switch response {
       case let .success(allDevices):
         self.devices = allDevices.device
@@ -85,25 +88,25 @@ class DashboardViewModel {
   
   func turnPlug(plugState: PlugState, device: Device) {
     networkManager.turnPlug(plugState: plugState, user: user, device: device) { [weak self] response in
+      guard let self = self else { return }
       switch response {
-      case let .success(plugResponse): break
-      case let .error(error): break
+      case .success:
+        device.powerState = plugState.rawValue
+        self.delegate?.dashboardViewModelDelegateReloadCollectionView(self)
+      case .error: break
       }
     }
   }
   
   func turnAllPlug(plugState: PlugState) {
-    for (index, device) in devices.enumerated() {
+    for device in devices {
       networkManager.turnPlug(plugState: plugState, user: user, device: device) { [weak self] response in
         guard let self = self else { return }
         switch response {
         case .success(_):
-          if index == self.devices.count - 1 {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-                self.getDevices()
-            }
-          }
-        case let .error(error): break
+          device.powerState = plugState.rawValue
+          self.delegate?.dashboardViewModelDelegateReloadCollectionView(self)
+        case .error: break
         }
       }
     }

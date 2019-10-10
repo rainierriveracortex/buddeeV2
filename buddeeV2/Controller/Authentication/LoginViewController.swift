@@ -13,6 +13,10 @@ class LoginViewController: UIViewController {
   @IBOutlet weak private var usernameTextField: UITextField!
   @IBOutlet weak private var passwordTextField: UITextField!
   
+  private lazy var loadingController: BuddeeLoadingController = {
+    return BuddeeLoadingController(withHostView: self.view, delegate: nil)
+  }()
+  
   private var isFormValid: Bool {
     return usernameTextField.text?.isEmpty == false && passwordTextField.text?.isEmpty == false
   }
@@ -119,6 +123,6 @@ extension LoginViewController: LoginViewModelDelegate {
   }
   
   func loginViewModelDelegateUpdateLoadingState(viewModel: LoginViewModel, isLoading: Bool) {
-    // show loading state
+    isLoading ? loadingController.showLoadingScreen(animated: true) : loadingController.hideLoadingScreen(animated: true)
   }
 }
