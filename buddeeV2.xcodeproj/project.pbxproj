@@ -19,6 +19,14 @@
 		3523E84A234EE158008E569B /* GetAllDevicesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3523E849234EE158008E569B /* GetAllDevicesRequest.swift */; };
 		3523E84C234F1086008E569B /* PlugRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3523E84B234F1086008E569B /* PlugRequest.swift */; };
 		3523E84E234F12E1008E569B /* PlugResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3523E84D234F12E1008E569B /* PlugResponse.swift */; };
+		3523E850234F53D8008E569B /* DashboardMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3523E84F234F53D8008E569B /* DashboardMenuViewController.swift */; };
+		3523E853234F5706008E569B /* DashboardMenuCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3523E851234F5706008E569B /* DashboardMenuCellTableViewCell.swift */; };
+		3523E854234F5706008E569B /* DashboardMenuCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3523E852234F5706008E569B /* DashboardMenuCellTableViewCell.xib */; };
+		3523E856234F6190008E569B /* UISwitch+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3523E855234F6190008E569B /* UISwitch+extension.swift */; };
+		3523E859234F61C6008E569B /* DashboardAllCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3523E858234F61C6008E569B /* DashboardAllCollectionViewCellViewModel.swift */; };
+		3523E85D234F6224008E569B /* DashboardMenuCellTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3523E85C234F6224008E569B /* DashboardMenuCellTableViewModel.swift */; };
+		3523E85F234F6254008E569B /* DashboardMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3523E85E234F6254008E569B /* DashboardMenuViewModel.swift */; };
+		3523E861234F62A6008E569B /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3523E860234F62A6008E569B /* DashboardViewModel.swift */; };
 		35469178234ADBE000522802 /* InitialNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35469177234ADBE000522802 /* InitialNavigationViewController.swift */; };
 		3546917A234ADF0D00522802 /* RegisterEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35469179234ADF0D00522802 /* RegisterEmailViewController.swift */; };
 		3546917D234AE7F900522802 /* RegisterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3546917C234AE7F900522802 /* RegisterUser.swift */; };
@@ -87,6 +95,14 @@
 		3523E849234EE158008E569B /* GetAllDevicesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllDevicesRequest.swift; sourceTree = "<group>"; };
 		3523E84B234F1086008E569B /* PlugRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlugRequest.swift; sourceTree = "<group>"; };
 		3523E84D234F12E1008E569B /* PlugResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlugResponse.swift; sourceTree = "<group>"; };
+		3523E84F234F53D8008E569B /* DashboardMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardMenuViewController.swift; sourceTree = "<group>"; };
+		3523E851234F5706008E569B /* DashboardMenuCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardMenuCellTableViewCell.swift; sourceTree = "<group>"; };
+		3523E852234F5706008E569B /* DashboardMenuCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardMenuCellTableViewCell.xib; sourceTree = "<group>"; };
+		3523E855234F6190008E569B /* UISwitch+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISwitch+extension.swift"; sourceTree = "<group>"; };
+		3523E858234F61C6008E569B /* DashboardAllCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardAllCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		3523E85C234F6224008E569B /* DashboardMenuCellTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardMenuCellTableViewModel.swift; sourceTree = "<group>"; };
+		3523E85E234F6254008E569B /* DashboardMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardMenuViewModel.swift; sourceTree = "<group>"; };
+		3523E860234F62A6008E569B /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		35469177234ADBE000522802 /* InitialNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialNavigationViewController.swift; sourceTree = "<group>"; };
 		35469179234ADF0D00522802 /* RegisterEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterEmailViewController.swift; sourceTree = "<group>"; };
 		3546917C234AE7F900522802 /* RegisterUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUser.swift; sourceTree = "<group>"; };
@@ -196,6 +212,24 @@
 			path = SWRevealViewController;
 			sourceTree = "<group>";
 		};
+		3523E857234F61B0008E569B /* CellViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3523E858234F61C6008E569B /* DashboardAllCollectionViewCellViewModel.swift */,
+				3523E85C234F6224008E569B /* DashboardMenuCellTableViewModel.swift */,
+			);
+			path = CellViewModel;
+			sourceTree = "<group>";
+		};
+		3523E85A234F61DF008E569B /* CellView */ = {
+			isa = PBXGroup;
+			children = (
+				3523E852234F5706008E569B /* DashboardMenuCellTableViewCell.xib */,
+				356B7192234DF2BC008993E1 /* DashboardAllCollectionViewCell.xib */,
+			);
+			path = CellView;
+			sourceTree = "<group>";
+		};
 		3546917B234AE7EA00522802 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +244,8 @@
 				3546917F234AF11800522802 /* RegisterViewModel.swift */,
 				35469181234AF14200522802 /* InitialViewModel.swift */,
 				356B717A234D8C39008993E1 /* LoginViewModel.swift */,
+				3523E85E234F6254008E569B /* DashboardMenuViewModel.swift */,
+				3523E860234F62A6008E569B /* DashboardViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -285,6 +321,7 @@
 				359D4F152347142300902723 /* UIViewController+extension.swift */,
 				35469183234B21E600522802 /* NSNotification+extension.swift */,
 				35A40BDC234C3B6F00C900B7 /* UINavigationController+extension.swift */,
+				3523E855234F6190008E569B /* UISwitch+extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -305,6 +342,7 @@
 			children = (
 				356B7180234D8D3F008993E1 /* DashboardViewController.swift */,
 				356B7186234DA784008993E1 /* DashboardNavigationViewController.swift */,
+				3523E84F234F53D8008E569B /* DashboardMenuViewController.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -324,8 +362,10 @@
 		356B718C234DBC01008993E1 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				3523E857234F61B0008E569B /* CellViewModel */,
+				3523E85A234F61DF008E569B /* CellView */,
 				356B7191234DF2BC008993E1 /* DashboardAllCollectionViewCell.swift */,
-				356B7192234DF2BC008993E1 /* DashboardAllCollectionViewCell.xib */,
+				3523E851234F5706008E569B /* DashboardMenuCellTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -481,6 +521,7 @@
 				3569677C2345BE80009B84BA /* Main.storyboard in Resources */,
 				3569679A2345E3E9009B84BA /* SlideView.xib in Resources */,
 				356B7194234DF2BC008993E1 /* DashboardAllCollectionViewCell.xib in Resources */,
+				3523E854234F5706008E569B /* DashboardMenuCellTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,6 +641,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				359D4F162347142300902723 /* UIViewController+extension.swift in Sources */,
+				3523E853234F5706008E569B /* DashboardMenuCellTableViewCell.swift in Sources */,
 				3502441223472DAC00F613E3 /* RegisterNameViewController.swift in Sources */,
 				3515E3BE234C302800DCE755 /* BaseRequest.swift in Sources */,
 				356B7187234DA784008993E1 /* DashboardNavigationViewController.swift in Sources */,
@@ -607,22 +649,27 @@
 				3523E842234ECFF2008E569B /* UserProfile.swift in Sources */,
 				35A40BDD234C3B6F00C900B7 /* UINavigationController+extension.swift in Sources */,
 				3515E3C0234C305900DCE755 /* NetworkService.swift in Sources */,
+				3523E85D234F6224008E569B /* DashboardMenuCellTableViewModel.swift in Sources */,
+				3523E850234F53D8008E569B /* DashboardMenuViewController.swift in Sources */,
 				3523E84A234EE158008E569B /* GetAllDevicesRequest.swift in Sources */,
 				356B7183234D8E01008993E1 /* MainTabBarViewController.swift in Sources */,
 				35469178234ADBE000522802 /* InitialNavigationViewController.swift in Sources */,
 				356967B023470EF2009B84BA /* LoginViewController.swift in Sources */,
+				3523E861234F62A6008E569B /* DashboardViewModel.swift in Sources */,
 				356B717B234D8C39008993E1 /* LoginViewModel.swift in Sources */,
 				3523E848234EDED6008E569B /* GetProfileRequest.swift in Sources */,
 				3502440F2347205E00F613E3 /* R.generated.swift in Sources */,
 				356967792345BE80009B84BA /* InitialViewController.swift in Sources */,
 				35D14E0F234C3321003E07DD /* BuddeeAPI.swift in Sources */,
 				3523E84C234F1086008E569B /* PlugRequest.swift in Sources */,
+				3523E85F234F6254008E569B /* DashboardMenuViewModel.swift in Sources */,
 				35A40BE4234C6FE700C900B7 /* RegistrationRequest.swift in Sources */,
 				356967752345BE80009B84BA /* AppDelegate.swift in Sources */,
 				356967772345BE80009B84BA /* SceneDelegate.swift in Sources */,
 				356B7181234D8D3F008993E1 /* DashboardViewController.swift in Sources */,
 				35A40BE2234C6AAA00C900B7 /* RegisterResponse.swift in Sources */,
 				35A40BE0234C5D7700C900B7 /* AlertHelper.swift in Sources */,
+				3523E859234F61C6008E569B /* DashboardAllCollectionViewCellViewModel.swift in Sources */,
 				35469184234B21E600522802 /* NSNotification+extension.swift in Sources */,
 				3546917A234ADF0D00522802 /* RegisterEmailViewController.swift in Sources */,
 				3546917D234AE7F900522802 /* RegisterUser.swift in Sources */,
@@ -637,6 +684,7 @@
 				3569679F2346EA37009B84BA /* UIView+extension.swift in Sources */,
 				356B7193234DF2BC008993E1 /* DashboardAllCollectionViewCell.swift in Sources */,
 				3523E84E234F12E1008E569B /* PlugResponse.swift in Sources */,
+				3523E856234F6190008E569B /* UISwitch+extension.swift in Sources */,
 				35D14E13234C3417003E07DD /* LoginResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

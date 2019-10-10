@@ -8,28 +8,6 @@
 
 import UIKit
 
-class DashboardAllCollectionViewCellViewModel {
-  let device: Device
-  
-  init(device: Device) {
-    self.device = device
-  }
-  
-  var powerStateString: String {
-    return device.powerState.capitalized
-  }
-  
-  var roomName: String {
-    return device.roomName
-  }
-  
-  var isOn: Bool {
-    return powerStateString.uppercased() == "on".uppercased()
-  }
-
-  
-}
-
 protocol DashboardAllCollectionViewCellDelegate: class {
   func dashboardAllCollectionViewCellDelegateTurnPlug(_ cell: DashboardAllCollectionViewCell, plugState: PlugState, device: Device)
 }
@@ -60,16 +38,14 @@ class DashboardAllCollectionViewCell: UICollectionViewCell {
   
   private func commonInit() {
     
-    airconSwitch.setScale(width: 36, height: 17)
+    airconSwitch.setScale(width: 36, height: 17) // size based on zeplin
     airconSwitch.onTintColor = .themeColor
     
     airconSwitch.addTarget(self, action: #selector(switchChanged), for: UIControl.Event.valueChanged)
-    
-    //bindViewModel()
   }
   
   func bindViewModel() {
-    roomNameLabel.text = viewModel.roomName
+    roomNameLabel.text = viewModel.locatioName
     powerStateLabel.text = viewModel.powerStateString
     airconSwitch.isOn = viewModel.isOn
   }
@@ -79,18 +55,5 @@ class DashboardAllCollectionViewCell: UICollectionViewCell {
     delegate?.dashboardAllCollectionViewCellDelegateTurnPlug(self,
                                                              plugState: PlugState.plugState(isOn: value),
                                                              device: viewModel.device)
-  }
-}
-
-
-extension UISwitch {
-  func setScale(width: CGFloat, height: CGFloat) {
-    let standardHeight: CGFloat = 31
-    let standardWidth: CGFloat = 51
-    
-    let heightRatio = height / standardHeight
-    let widthRatio = width / standardWidth
-    
-    transform = CGAffineTransform(scaleX: widthRatio, y: heightRatio)
   }
 }

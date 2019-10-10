@@ -18,6 +18,7 @@ enum PlugState: String {
     }
     return .off
   }
+  
   static func plugState(isOn: Bool) -> PlugState {
     if isOn {
       return .on

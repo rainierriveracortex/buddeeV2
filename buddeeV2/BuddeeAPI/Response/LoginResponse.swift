@@ -10,18 +10,32 @@ import Foundation
 
 class AppHelper {
   static let shared = AppHelper()
-  private var user: User?
+  private var user: User!
   
   func saveUser(user: User) {
     self.user = user
+    saveUserLocally(user: user)
+  }
+  
+  func saveUserLocally(user: User) {
+    let userEncoded = try! JSONEncoder().encode(user)
+    UserDefaults.standard.set(userEncoded, forKey: "CurrentUser")
   }
   
   func getCurrentUser() -> User? {
+    guard let userData = UserDefaults.standard.data(forKey: "CurrentUser") else {
+      return nil
+    }
+    let user = try? JSONDecoder().decode(User.self, from: userData)
     return user
+  }
+  
+  func deleteCurrentUser() {
+    UserDefaults.standard.removeObject(forKey: "CurrentUser")
   }
 }
 
-class User {
+class User: Codable {
   
   let userId: String
   let phoneId: String

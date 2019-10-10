@@ -169,26 +169,41 @@
             </objects>
             <point key="canvasLocation" x="-447.82608695652175" y="-797.54464285714278"/>
         </scene>
-        <!--View Controller-->
+        <!--Dashboard Menu View Controller-->
         <scene sceneID="K2U-88-nhD">
             <objects>
-                <viewController id="Olc-9s-IMQ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DashboardMenuViewController" id="Olc-9s-IMQ" customClass="DashboardMenuViewController" customModule="buddeeV2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3Hf-9W-P2a">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="drF-cr-Pg3">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1eE-zH-dl7" firstAttribute="trailing" secondItem="drF-cr-Pg3" secondAttribute="trailing" id="GvA-Nw-NHL"/>
+                            <constraint firstItem="drF-cr-Pg3" firstAttribute="leading" secondItem="1eE-zH-dl7" secondAttribute="leading" id="KzS-v1-OT3"/>
+                            <constraint firstItem="1eE-zH-dl7" firstAttribute="bottom" secondItem="drF-cr-Pg3" secondAttribute="bottom" id="rzx-kS-oLP"/>
+                            <constraint firstItem="drF-cr-Pg3" firstAttribute="top" secondItem="1eE-zH-dl7" secondAttribute="top" id="yAB-QO-mb3"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="1eE-zH-dl7"/>
                     </view>
                     <navigationItem key="navigationItem" id="gnc-85-KCK"/>
+                    <connections>
+                        <outlet property="tableView" destination="drF-cr-Pg3" id="OIh-hi-leI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g4i-mN-h2y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="462.31884057971018" y="-83.705357142857139"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Dashboard Navigation View Controller-->
         <scene sceneID="nxf-0l-Ijx">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3TF-Dm-1Yo" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3TF-Dm-1Yo" customClass="DashboardNavigationViewController" customModule="buddeeV2" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="J05-JL-GsE">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

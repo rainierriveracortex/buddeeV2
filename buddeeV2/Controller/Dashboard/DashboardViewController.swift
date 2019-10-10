@@ -8,113 +8,6 @@
 
 import UIKit
 
-protocol DashboardViewModelDelegate: class {
-  func dashboardViewModelDelegateReloadCollectionView(_ viewModel: DashboardViewModel)
-}
-
-class DashboardViewModel {
-  
-  let user: User
-  
-  var networkManager: BuddeeAPI
-  
-  weak var delegate: DashboardViewModelDelegate?
-  private var devices = [Device]()
-  
-  init(networkManager: BuddeeAPI = BuddeeNetworkService()) {
-    guard let user = AppHelper.shared.getCurrentUser() else {
-      fatalError("Could not find user")
-    }
-    self.networkManager = networkManager
-    self.user = user
-  }
-  
-  var numberofRows: Int {
-    return devices.count
-  }
-  
-  var numberofSections: Int {
-    return 1
-  }
-  
-  var navigationTitle: String {
-    return "Dashboard"
-  }
-  
-  var devicesConnectedText: String {
-    return "\(devices.count) Devices Connected"
-  }
-  
-  var isAllSwitchOn: Bool {
-    return (devices.first { (device) -> Bool in
-      let plugState = PlugState.plugState(string: device.powerState)
-      return plugState == PlugState.on
-      } != nil)
-  }
-  
-  func currentDevice(row: Int) -> Device {
-    return devices[row]
-  }
-  
-  func getProfile() {
-    networkManager.getProfile(user: user) { [weak self] response in
-      guard let self = self else { return }
-      
-      switch response {
-      case let .success(UserProfile): break
-     //   print(UserProfile)
-      case let .error(error): break
-   //     print(error)
-      }
-    }
-  }
-  
-  func getDevices() {
-    networkManager.getAllDevices(user: user) { [weak self] response in
-      guard let self = self else { return }
-      switch response {
-      case let .success(allDevices):
-        self.devices = allDevices.device
-        print("👹 \(self.isAllSwitchOn)")
-        self.delegate?.dashboardViewModelDelegateReloadCollectionView(self)
-      case let .error(error):
-        print(error)
-      }
-    }
-  }
-  
-  func turnPlug(plugState: PlugState, device: Device) {
-    networkManager.turnPlug(plugState: plugState, user: user, device: device) { [weak self] response in
-      switch response {
-      case let .success(plugResponse):
-        print("👺 \(plugResponse)")
-      case let .error(error):
-        print("👺 \(error)")
-      }
-    }
-  }
-  
-  func turnAllPlug(plugState: PlugState) {
-    for (index, device) in devices.enumerated() {
-      networkManager.turnPlug(plugState: plugState, user: user, device: device) { [weak self] response in
-        guard let self = self else { return }
-        switch response {
-        case let .success(plugResponse):
-          print("👹 Devices count \(self.devices.count)")
-          if index == self.devices.count - 1 {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-                self.getDevices()
-            }
-          }
-        case let .error(error):
-          print("👹 \(error)")
-        }
-      }
-    }
-  }
-
-}
-
 class DashboardViewController: UIViewController {
   
   var viewModel: DashboardViewModel = DashboardViewModel()
@@ -135,41 +28,51 @@ class DashboardViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    viewModel.delegate = self
+    requestAPI()
+    
+    setupCollectionView()
+    setupViews()
+    setupRevealController()
+  }
+  
+  private func requestAPI () {
     viewModel.getProfile()
     viewModel.getDevices()
-    viewModel.delegate = self
-    
+  }
+  
+  private func setupRevealController() {
+    if self.revealViewController() != nil {
+      menuBarButton.target = self.revealViewController()
+      menuBarButton.action = #selector(SWRevealViewController.revealToggle(_:))
+      view.addGestureRecognizer(self.revealViewController()!.panGestureRecognizer())
+    }
+  }
+  
+  private func setupCollectionView() {
     collectionView.delegate = self
     collectionView.dataSource = self
     
     collectionView.backgroundColor = .buddeeLightGrayColor
     
     collectionView.register(R.nib.dashboardAllCollectionViewCell)
-    setupViews()
-    
-    topContainerView.roundTopCorners()
-    
-    navigationItem.title = "Dashboard"
-    navigationController?.navigationBar.barTintColor = UIColor.themeColor
-    
-    setupDevicesConnectedText()
-    
-    if self.revealViewController() != nil {
-      menuBarButton.target = self.revealViewController()
-      menuBarButton.action = #selector(SWRevealViewController.revealToggle(_:))
-      view.addGestureRecognizer(self.revealViewController()!.panGestureRecognizer())
-    }
-    allAirconSwitch.addTarget(self, action: #selector(switchChanged), for: UIControl.Event.valueChanged)
   }
   
   private func setupViews() {
     segmentedControl.selectedSegmentTintColor = .themeColor
+    
     allAirconSwitch.onTintColor = .themeColor
     allAirconSwitch.isOn = viewModel.isAllSwitchOn
+    setupDevicesConnectedText()
+    
+    navigationItem.title = viewModel.navigationTitle
+    navigationController?.navigationBar.barTintColor = UIColor.themeColor
+    
+    topContainerView.roundTopCorners()
+    allAirconSwitch.addTarget(self, action: #selector(switchChanged), for: UIControl.Event.valueChanged)
   }
   
   private func setupDevicesConnectedText() {
-    print(viewModel.devicesConnectedText)
     deviceConnectedLabel.text = viewModel.devicesConnectedText
   }
   
@@ -203,10 +106,10 @@ extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDat
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     
     let paddingSpace = sectionInsets.left * (2 + 1)
-       let availableWidth = view.frame.width - paddingSpace
-       let widthPerItem = availableWidth / 2
+    let availableWidth = view.frame.width - paddingSpace
+    let widthPerItem = availableWidth / 2
        
-       return CGSize(width: widthPerItem, height: widthPerItem)
+    return CGSize(width: widthPerItem, height: widthPerItem)
   }
   
   func collectionView(_ collectionView: UICollectionView,
@@ -216,11 +119,11 @@ extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDat
   }
 
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-      return 0
+    return 0
   }
 
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-      return 16
+    return 16
   }
 }
 
@@ -234,6 +137,7 @@ extension DashboardViewController: DashboardViewModelDelegate {
   func dashboardViewModelDelegateReloadCollectionView(_ viewModel: DashboardViewModel) {
     collectionView.reloadData()
     setupDevicesConnectedText()
+    allAirconSwitch.isOn = viewModel.isAllSwitchOn
   }
   
 }
