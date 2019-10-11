@@ -38,7 +38,7 @@ final class RegistrationRequest: ManagedRequest {
   }
   
   override func requestURL() -> URLConvertible {
-    return "https://aws-us-1.buddee.ph/tio/app/register"
+    return "https://app.buddee.ph/tio/app/register"
   }
   
   override func requestMethod() -> HTTPMethod {

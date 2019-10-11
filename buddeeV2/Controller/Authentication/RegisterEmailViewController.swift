@@ -16,6 +16,10 @@ class RegisterEmailViewController: UIViewController {
   
   var viewModel: RegisterViewModelType! // this should come from RegisterNameViewController
   
+  private lazy var loadingController: BuddeeLoadingController = {
+    return BuddeeLoadingController(withHostView: self.view, delegate: nil)
+  }()
+  
   private var isFormValid: Bool {
     return emailTextField.text?.isEmpty == false && passwordTextField.text?.isEmpty == false && confirmPasswordTextField.text?.isEmpty == false && isValidPassword
   }
@@ -50,6 +54,7 @@ class RegisterEmailViewController: UIViewController {
     guard isFormValid else {
         return
     }
+    view.endEditing(true)
     viewModel.updateRegisterUser(withEmail: emailTextField.text!,
                                  password: passwordTextField.text!)
     viewModel.registerUserToAPI()
@@ -82,11 +87,20 @@ extension RegisterEmailViewController: RegisterViewModelDelegate {
     guard let loginController = R.storyboard.main.loginViewController() else {
       fatalError("Could not find login")
     }
+    let backItem = UIBarButtonItem()
+    backItem.title = ""
+    navigationItem.backBarButtonItem?.image = R.image.backarrow()
+    navigationItem.backBarButtonItem = backItem
+    navigationController?.navigationBar.isHidden = false
     navigationController?.pushViewController(loginController, animated: true)
   }
   
   func registerViewModelDelegateDidFailRegister(viewModel: RegisterViewModel, error: String) {
     showAlert(title: error, message: nil)
+  }
+  
+  func registerViewModelDelegateUpdateLoadingState(viewModel: RegisterViewModel, shouldLoad: Bool) {
+    shouldLoad ? loadingController.showLoadingScreen(animated: true) : loadingController.hideLoadingScreen(animated: true)
   }
     
 }

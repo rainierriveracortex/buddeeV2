@@ -19,6 +19,7 @@ protocol RegisterViewModelType {
 protocol RegisterViewModelDelegate: class {
   func registerViewModelDelegateDidSuccessRegister(viewModel: RegisterViewModel)
   func registerViewModelDelegateDidFailRegister(viewModel: RegisterViewModel, error: String)
+  func registerViewModelDelegateUpdateLoadingState(viewModel: RegisterViewModel, shouldLoad: Bool)
 }
 
 class RegisterViewModel: RegisterViewModelType {
@@ -51,10 +52,12 @@ class RegisterViewModel: RegisterViewModelType {
     
   func registerUserToAPI() {
     if let registerUser = registerUser {
+      delegate?.registerViewModelDelegateUpdateLoadingState(viewModel: self, shouldLoad: true)
       networkManager.register(register: registerUser) { [weak self] (response) in
         guard let self = self else { return }
+        self.delegate?.registerViewModelDelegateUpdateLoadingState(viewModel: self, shouldLoad: false)
         switch response {
-        case let .success(result):
+        case .success(_):
           self.delegate?.registerViewModelDelegateDidSuccessRegister(viewModel: self)
         case let .error(error):
           self.delegate?.registerViewModelDelegateDidFailRegister(viewModel: self, error: error)
