@@ -11,6 +11,7 @@
 		3502441223472DAC00F613E3 /* RegisterNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3502441123472DAC00F613E3 /* RegisterNameViewController.swift */; };
 		3515E3BE234C302800DCE755 /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3515E3BD234C302800DCE755 /* BaseRequest.swift */; };
 		3515E3C0234C305900DCE755 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3515E3BF234C305900DCE755 /* NetworkService.swift */; };
+		3518592523500A3A00D0BAA4 /* InitialViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3518592323500A2B00D0BAA4 /* InitialViewModelSpec.swift */; };
 		351B562A234EA5E800989498 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 351B5628234EA5E700989498 /* SWRevealViewController.m */; };
 		3523E842234ECFF2008E569B /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3523E841234ECFF2008E569B /* UserProfile.swift */; };
 		3523E844234ED2B8008E569B /* UIWindow+Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3523E843234ED2B8008E569B /* UIWindow+Transition.swift */; };
@@ -88,6 +89,7 @@
 		3502441123472DAC00F613E3 /* RegisterNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNameViewController.swift; sourceTree = "<group>"; };
 		3515E3BD234C302800DCE755 /* BaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
 		3515E3BF234C305900DCE755 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		3518592323500A2B00D0BAA4 /* InitialViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewModelSpec.swift; sourceTree = "<group>"; };
 		351B5627234EA5E500989498 /* buddeeV2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "buddeeV2-Bridging-Header.h"; sourceTree = "<group>"; };
 		351B5628234EA5E700989498 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		351B5629234EA5E800989498 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -208,6 +210,14 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		3518592223500A0A00D0BAA4 /* Spec */ = {
+			isa = PBXGroup;
+			children = (
+				3518592323500A2B00D0BAA4 /* InitialViewModelSpec.swift */,
+			);
+			path = Spec;
+			sourceTree = "<group>";
+		};
 		351B5626234EA5C200989498 /* SWRevealViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -279,6 +289,7 @@
 		356967732345BE80009B84BA /* buddeeV2 */ = {
 			isa = PBXGroup;
 			children = (
+				3518592223500A0A00D0BAA4 /* Spec */,
 				35A40BDE234C5D6A00C900B7 /* Utility */,
 				35D14E0B234C320F003E07DD /* BuddeeAPI */,
 				3515E3BC234C2FEF00DCE755 /* Network */,
@@ -705,6 +716,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3518592523500A3A00D0BAA4 /* InitialViewModelSpec.swift in Sources */,
 				3569678C2345BE83009B84BA /* buddeeV2Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
