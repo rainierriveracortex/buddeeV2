@@ -12,6 +12,7 @@
 		3515E3BE234C302800DCE755 /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3515E3BD234C302800DCE755 /* BaseRequest.swift */; };
 		3515E3C0234C305900DCE755 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3515E3BF234C305900DCE755 /* NetworkService.swift */; };
 		3518592523500A3A00D0BAA4 /* InitialViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3518592323500A2B00D0BAA4 /* InitialViewModelSpec.swift */; };
+		35189FF82373E761002FE10F /* BuddeeLoadingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35189FF72373E761002FE10F /* BuddeeLoadingController.swift */; };
 		351B562A234EA5E800989498 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 351B5628234EA5E700989498 /* SWRevealViewController.m */; };
 		3523E842234ECFF2008E569B /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3523E841234ECFF2008E569B /* UserProfile.swift */; };
 		3523E844234ED2B8008E569B /* UIWindow+Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3523E843234ED2B8008E569B /* UIWindow+Transition.swift */; };
@@ -30,7 +31,6 @@
 		3523E861234F62A6008E569B /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3523E860234F62A6008E569B /* DashboardViewModel.swift */; };
 		3523E864234F64D5008E569B /* BuddeeLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3523E862234F64D5008E569B /* BuddeeLoadingView.swift */; };
 		3523E865234F64D5008E569B /* BuddeeLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3523E863234F64D5008E569B /* BuddeeLoadingView.xib */; };
-		3523E869234F6660008E569B /* BuddeeLoadingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3523E868234F6660008E569B /* BuddeeLoadingController.swift */; };
 		35469178234ADBE000522802 /* InitialNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35469177234ADBE000522802 /* InitialNavigationViewController.swift */; };
 		3546917A234ADF0D00522802 /* RegisterEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35469179234ADF0D00522802 /* RegisterEmailViewController.swift */; };
 		3546917D234AE7F900522802 /* RegisterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3546917C234AE7F900522802 /* RegisterUser.swift */; };
@@ -90,6 +90,7 @@
 		3515E3BD234C302800DCE755 /* BaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
 		3515E3BF234C305900DCE755 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		3518592323500A2B00D0BAA4 /* InitialViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewModelSpec.swift; sourceTree = "<group>"; };
+		35189FF72373E761002FE10F /* BuddeeLoadingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuddeeLoadingController.swift; sourceTree = "<group>"; };
 		351B5627234EA5E500989498 /* buddeeV2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "buddeeV2-Bridging-Header.h"; sourceTree = "<group>"; };
 		351B5628234EA5E700989498 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		351B5629234EA5E800989498 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -110,7 +111,6 @@
 		3523E860234F62A6008E569B /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		3523E862234F64D5008E569B /* BuddeeLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuddeeLoadingView.swift; sourceTree = "<group>"; };
 		3523E863234F64D5008E569B /* BuddeeLoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BuddeeLoadingView.xib; sourceTree = "<group>"; };
-		3523E868234F6660008E569B /* BuddeeLoadingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BuddeeLoadingController.swift; path = ../../../../../../Downloads/BuddeeLoadingController.swift; sourceTree = "<group>"; };
 		35469177234ADBE000522802 /* InitialNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialNavigationViewController.swift; sourceTree = "<group>"; };
 		35469179234ADF0D00522802 /* RegisterEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterEmailViewController.swift; sourceTree = "<group>"; };
 		3546917C234AE7F900522802 /* RegisterUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUser.swift; sourceTree = "<group>"; };
@@ -323,8 +323,8 @@
 		356967982345E3D1009B84BA /* View */ = {
 			isa = PBXGroup;
 			children = (
-				3523E868234F6660008E569B /* BuddeeLoadingController.swift */,
 				3523E862234F64D5008E569B /* BuddeeLoadingView.swift */,
+				35189FF72373E761002FE10F /* BuddeeLoadingController.swift */,
 				3523E863234F64D5008E569B /* BuddeeLoadingView.xib */,
 				356B718C234DBC01008993E1 /* Cell */,
 				356967992345E3E9009B84BA /* SlideView.xib */,
@@ -664,13 +664,13 @@
 				359D4F162347142300902723 /* UIViewController+extension.swift in Sources */,
 				3523E853234F5706008E569B /* DashboardMenuCellTableViewCell.swift in Sources */,
 				3502441223472DAC00F613E3 /* RegisterNameViewController.swift in Sources */,
+				35189FF82373E761002FE10F /* BuddeeLoadingController.swift in Sources */,
 				3515E3BE234C302800DCE755 /* BaseRequest.swift in Sources */,
 				356B7187234DA784008993E1 /* DashboardNavigationViewController.swift in Sources */,
 				35469180234AF11800522802 /* RegisterViewModel.swift in Sources */,
 				3523E842234ECFF2008E569B /* UserProfile.swift in Sources */,
 				35A40BDD234C3B6F00C900B7 /* UINavigationController+extension.swift in Sources */,
 				3515E3C0234C305900DCE755 /* NetworkService.swift in Sources */,
-				3523E869234F6660008E569B /* BuddeeLoadingController.swift in Sources */,
 				3523E85D234F6224008E569B /* DashboardMenuCellTableViewModel.swift in Sources */,
 				3523E850234F53D8008E569B /* DashboardMenuViewController.swift in Sources */,
 				3523E84A234EE158008E569B /* GetAllDevicesRequest.swift in Sources */,
